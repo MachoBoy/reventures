@@ -85,12 +85,12 @@ const Home = () => {
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
                   108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
                 </div>
-                <Image
+                {/* <Image
                   width='558'
                   height='522'
                   alt='google-map'
-                  src='https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=AIzaSyCPBToDKetpKWLuYCxeLA1G58TdpEhmNC8'
-                />
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.mapKey}`}
+                /> */}
               </div>
               <div className='w-full'>
                 <div className='text-gray-eee text-xl font-bold'>
@@ -99,12 +99,12 @@ const Home = () => {
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
                   21, Gungdong-ro, Yuseong-gu, Daejeon, Republic of Korea
                 </div>
-                <Image
+                {/* <Image
                   width='558'
                   height='522'
                   alt='google-map'
-                  src='https://maps.googleapis.com/maps/api/staticmap?center=36.3631304,127.3447129&zoom=14&size=558x522&maptype=roadmap&key=AIzaSyCPBToDKetpKWLuYCxeLA1G58TdpEhmNC8'
-                />
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=36.3631304,127.3447129&zoom=14&size=558x522&maptype=roadmap&key=${process.env.mapKey}`}
+                /> */}
               </div>
             </div>
           </div>
