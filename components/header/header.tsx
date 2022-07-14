@@ -29,18 +29,18 @@ const navData: Nav[] = [
     title: 'Portfolio',
     link: '/portfolio',
   },
-  {
-    title: 'Insight',
-    link: '/insight',
-  },
+  // {
+  //   title: 'Insight',
+  //   link: '/insight',
+  //   children: [
+  //     { title: 'Apply', link: '/apply' },
+  //     { title: 'Partnership', link: '/partnership' },
+  //     { title: 'FAQ', link: '/faq' },
+  //   ],
+  // },
   {
     title: 'Contact Us',
     link: '/contact',
-    children: [
-      { title: 'Apply', link: '/apply' },
-      { title: 'Partnership', link: '/partnership' },
-      { title: 'FAQ', link: '/faq' },
-    ],
   },
 ];
 
