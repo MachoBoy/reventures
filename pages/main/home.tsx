@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import MainSectionTitle from '../../components/main-section-title/mainSectionTitle';
 import MainAboutItem from '../../components/main-about-item/mainAboutItem';
 import PortfolioCard from '../../components/portfolio-card/portfolioCard';
@@ -55,7 +56,7 @@ const Home = () => {
       </div>
       <div className='fifth-section w-full pt-10 pb-14 bg-black'>
         <div className='w-full inline-block'>
-          <div className='ml-[387px] mr-auto'>
+          <div className='w-full max-w-[1143px] m-auto'>
             <MainSectionTitle title='our investment history' isDark={true} />
           </div>
           <div className='w-full max-w-[1188px] flex flex-row justify-between mt-10 m-auto'>
@@ -71,6 +72,60 @@ const Home = () => {
             })}
           </div>
         </div>
+      </div>
+      <div className='sixth-section w-full pt-[60px] pb-[81px] bg-[#1A1A1A]'>
+        <div className='w-full max-w-[1143px] m-auto flex flex-col'>
+          <MainSectionTitle title='contact us' isDark={true} />
+          <div className='mt-12 flex flex-col '>
+            <div className='mt-5 flex flex-row gap-7'>
+              <div className='w-full'>
+                <div className='text-gray-eee text-xl font-bold'>
+                  서울 영등포구 여의대로 108 파크원타워1 4~5층
+                </div>
+                <div className='mt-2 text-gray-eee text-lg mb-5'>
+                  108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
+                </div>
+                <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src='https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=AIzaSyCPBToDKetpKWLuYCxeLA1G58TdpEhmNC8'
+                />
+              </div>
+              <div className='w-full'>
+                <div className='text-gray-eee text-xl font-bold'>
+                  대전 유성구 궁동로 21 대전 팁스타운(TIPS TOWN)
+                </div>
+                <div className='mt-2 text-gray-eee text-lg mb-5'>
+                  21, Gungdong-ro, Yuseong-gu, Daejeon, Republic of Korea
+                </div>
+                <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src='https://maps.googleapis.com/maps/api/staticmap?center=36.3631304,127.3447129&zoom=14&size=558x522&maptype=roadmap&key=AIzaSyCPBToDKetpKWLuYCxeLA1G58TdpEhmNC8'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='seventh-section pt-[121px] pb-[92px] bg-slate-500 text-center'>
+        <div className='text-white text-3xl'>IR, 창업, 제휴 및 협업 문의</div>
+        <div className='mt-5 text-gray-eee text-xl'>
+          리벤처스와 함께 성장하고 싶으신가요?
+        </div>
+        <div className='text-gray-eee text-xl'>
+          혹은 리벤처스에 의뢰할 프로젝트가 있으신가요?
+        </div>
+        <div className='text-gray-eee text-xl'>
+          리벤처스는 항상 열려 있습니다.
+        </div>
+        <Link href='/'>
+          <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl font-bold'>
+            지원하기
+          </a>
+        </Link>
       </div>
     </div>
   );
