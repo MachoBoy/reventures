@@ -13,7 +13,7 @@ const PortfolioCard = () => {
         Food-Tech
       </div>
       <p className='mt-5 text-base text-[#666666]'>
-        해조류 추출 헴분자('아미노산 복합체'(ACOM-S)) 기반 대체육류 식품개발
+        해조류 추출 헴분자 기반 대체육류 식품개발
       </p>
     </div>
   );
