@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Header />
-        <div className='container w-full max-w-[1920px]'>
+        <div className='w-full max-w-[1920px]'>
           <Main />
         </div>
       </main>

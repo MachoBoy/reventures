@@ -46,7 +46,7 @@ const navData: Nav[] = [
 
 const Header = () => {
   return (
-    <div className='header w-full h-[115px] bg-black fixed top-0 left-0 m-auto flex justify-center items-center'>
+    <div className='header w-full h-[115px] bg-black fixed top-0 left-0 m-auto flex justify-center items-center z-50'>
       <div className='w-auto min-w-[1000px] m-auto'>
         <div className='header-logo'></div>
         <nav className='menu-container flex w-full min-w-[699px]'>

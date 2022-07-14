@@ -15,3 +15,24 @@ export const aboutData = [
     desc: '다양한 분야에서 각자의 개성을 지닌 창업가들이 주기적인 소통을 통해 서로의 경험을 공유하고 문제점을 보완하며 함께 미래를 만들어갑니다.',
   },
 ];
+
+export const investCountData = [
+  {
+    number: '42,200,000,000',
+    title: 'AUM',
+  },
+  {
+    number: '91',
+    title: 'FUNDS',
+    subtitle: ['Blind 3', 'Project 88'],
+  },
+  {
+    number: '64',
+    title: 'COMPANY',
+  },
+  {
+    number: '32',
+    title: 'EXIT',
+    subtitle: ['IPO', 'KOSDAQ 6', 'KONEX 4'],
+  },
+];
