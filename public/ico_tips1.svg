@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130">
+  <g id="Group_281" data-name="Group 281" transform="translate(-596 -2836.5)">
+    <g id="Ellipse_6" data-name="Ellipse 6" transform="translate(596 2836.5)" fill="#fff" stroke="#3d3d3d" stroke-width="2">
+      <circle cx="65" cy="65" r="65" stroke="none"/>
+      <circle cx="65" cy="65" r="64" fill="none"/>
+    </g>
+    <path id="iconmonstr-eye-filled" d="M33.914,5C20.9,5,9.2,14.873,2.463,25.694a3.183,3.183,0,0,0,0,3.3C9.2,39.815,20.9,49.688,33.914,49.688c13.224,0,24.885-9.863,31.486-20.726a3.193,3.193,0,0,0,0-3.237C58.8,14.863,47.138,5,33.914,5Zm.006,9.576A12.768,12.768,0,1,1,21.152,27.344,12.773,12.773,0,0,1,33.92,14.576Zm0,4.788a7.98,7.98,0,1,1-7.98,7.98A7.983,7.983,0,0,1,33.92,19.364Z" transform="translate(626.83 2875.053)"/>
+  </g>
+</svg>

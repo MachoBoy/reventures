@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130">
+  <g id="Group_283" data-name="Group 283" transform="translate(-601.795 -3119)">
+    <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(601.795 3119)" fill="#fff" stroke="#3d3d3d" stroke-width="2">
+      <circle cx="65" cy="65" r="65" stroke="none"/>
+      <circle cx="65" cy="65" r="64" fill="none"/>
+    </g>
+    <path id="iconmonstr-cube-18" d="M45.215,25.2V9.063L30.053,0,15.072,8.965V25.29L0,33.389V51.515l15.413,8.772,14.73-8.523,14.73,8.523,15.413-8.772V33.487Zm-2.871.09L31.49,31.276V18.827l10.854-6.378ZM30.048,3.409,40.779,9.93l-10.721,6.3L19.568,9.817ZM4.5,34.241l12-6.355,10.643,6.071-11.726,6.7L4.5,34.241Zm12.351,9.01,11.861-6.775v12.7L16.848,56.1V43.251Zm16.358-9.41,10.668-6,11.98,6.516-10.97,6.3Zm24.21,15.883L46.311,56.1V43.251l11.105-6.375V49.724Z" transform="translate(638.152 3153.053)"/>
+  </g>
+</svg>

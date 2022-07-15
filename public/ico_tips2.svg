@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130">
+  <g id="Group_282" data-name="Group 282" transform="translate(-1203.75 -2836.5)">
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1203.75 2836.5)" fill="#fff" stroke="#3d3d3d" stroke-width="2">
+      <circle cx="65" cy="65" r="65" stroke="none"/>
+      <circle cx="65" cy="65" r="64" fill="none"/>
+    </g>
+    <path id="iconmonstr-medical-6" d="M50.729,34.2c-5.444,6.443-13.046,13.43-21.212,21.467C13.7,40.1,0,28.474,0,17.1,0,.592,21.773-3.254,29.517,9.924,37.2-3.157,59.033.535,59.033,17.1A16.967,16.967,0,0,1,57.7,23.467H40.854a1.877,1.877,0,0,0-1.637.961l-2.182,3.891L30.944,16.412A1.878,1.878,0,0,0,27.73,16.2l-5.045,7.272H19.392a5.367,5.367,0,1,0,0,5.367h5.249a1.885,1.885,0,0,0,1.538-.8l2.654-3.773L34.886,36.5a1.88,1.88,0,0,0,3.292.14l4.72-7.8H64.4V34.2Z" transform="translate(1237.3 2877.667)" fill-rule="evenodd"/>
+  </g>
+</svg>
