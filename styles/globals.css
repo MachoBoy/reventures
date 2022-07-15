@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
   * {
-    @apply font-pretender;
+    @apply font-pretender font-light;
   }
 }
 @tailwind components;
