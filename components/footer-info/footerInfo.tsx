@@ -1,3 +1,4 @@
+import Image from 'next/image';
 interface Props {
   title: string;
   desc1: string;
@@ -9,7 +10,7 @@ interface Props {
 const FooterInfo = ({ title, desc1, desc2, desc3, desc4, desc5 }: Props) => {
   return (
     <div className='flex flex-col'>
-      <div className='text-3xl text-[#DBDBDB]'>{title}</div>
+      <div className='text-3xl text-[#DBDBDB] font-medium'>{title}</div>
       <div className='mt-7 flex flex-col text-base text-[#DBDBDB]'>
         <span>{desc1}</span>
         <span className='mt-1'>{desc2}</span>

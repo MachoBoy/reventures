@@ -1,55 +1,40 @@
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useScroll } from 'framer-motion';
+import { navData } from '../../pages/data/nav-data';
 
-interface Nav {
-  title: string;
-  link: string;
-  children?: NavChildren[] | undefined;
-}
-
-interface NavChildren {
-  title: string;
-  link: string;
-}
-
-const navData: Nav[] = [
-  {
-    title: 'About',
-    link: '/about',
-  },
-  {
-    title: 'TIPS',
-    link: '/tips',
-  },
-  {
-    title: 'Team',
-    link: '/team',
-  },
-  {
-    title: 'Portfolio',
-    link: '/portfolio',
-  },
-  // {
-  //   title: 'Insight',
-  //   link: '/insight',
-  //   children: [
-  //     { title: 'Apply', link: '/apply' },
-  //     { title: 'Partnership', link: '/partnership' },
-  //     { title: 'FAQ', link: '/faq' },
-  //   ],
-  // },
-  {
-    title: 'Contact Us',
-    link: '/contact',
-  },
-];
-
+// Insight 메뉴 추가되면 max-w-[699px]
 const Header = () => {
+  const { scrollY, scrollYProgress } = useScroll();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      setScrollPosition(latest);
+      //console.log('Page scroll: ', current);
+    });
+  }, [scrollY]);
   return (
-    <div className='header w-full h-[115px] bg-black fixed top-0 left-0 m-auto flex justify-center items-center z-50'>
-      <div className='w-auto min-w-[1000px] m-auto'>
-        <div className='header-logo'></div>
-        <nav className='menu-container flex w-full min-w-[699px]'>
+    <div
+      className={`header w-full h-[80px] fixed top-0 left-0 m-auto flex justify-center items-center z-50 ${
+        scrollPosition > 0 ? 'bg-black' : 'bg-transparent'
+      }`}
+    >
+      <div className='w-auto min-w-[1000px] m-auto flex justify-between'>
+        <div className='header-logo'>
+          <Link href='/'>
+            <a>
+              <Image
+                layout='fixed'
+                width={70}
+                height={38}
+                src='/logo_nav.png'
+                alt='logo'
+              />
+            </a>
+          </Link>
+        </div>
+        <nav className='menu-container flex w-full max-w-[670px]'>
           <ul className='menu w-full flex justify-evenly items-center'>
             {navData.map(({ title, link, children }, index) => {
               return (

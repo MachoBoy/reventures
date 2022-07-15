@@ -7,7 +7,7 @@ const MainSectionTitle = ({ title, isDark }: Props) => {
   return (
     <div>
       <div
-        className={`font-pretender text-4xl ${
+        className={`font-pretender text-4xl font-normal ${
           isDark ? 'text-white' : 'text-gray-40'
         } uppercase`}
       >

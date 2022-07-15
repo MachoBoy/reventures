@@ -1,15 +1,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterInfo from '../footer-info/footerInfo';
+import AllRightsReserve from '../all-rights-reserve/allRightsReserve';
 import { footerData } from '../../pages/data/footer-data';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-  // console.log(year);
   return (
     <div>
-      <div className='w-full flex flex-col bg-[#222222] pb-32'>
-        <div className='w-full py-12'></div>
+      <div className='w-full max-w-[1920px] mx-auto flex flex-col bg-[#222222] bg-footer-building bg-bottom bg-no-repeat pb-32'>
+        <div className='w-full max-w-[1093px] py-12 mx-auto'>
+          <Image
+            layout='fixed'
+            src='/logo_sm.png'
+            width={194}
+            height={21}
+            alt='logo'
+          />
+        </div>
         <div className='w-full h-[1px] bg-[#4B4B4B]'></div>
         <div className='mt-10 w-full max-w-[1093px] flex flex-row justify-between mx-auto'>
           {footerData.map(
@@ -37,7 +44,7 @@ const Footer = () => {
               <a className='underline'>Email</a>
             </Link>
           </div>
-          <div>© {year} Reventures Co.Ltd, All Rights Reserved</div>
+          <AllRightsReserve />
         </div>
       </div>
     </div>

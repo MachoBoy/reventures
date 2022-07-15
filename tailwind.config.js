@@ -24,6 +24,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         'tips-top': 'url(/bg_tips1.jpg)',
+        'home-third': 'url(/bg_home1.jpg)',
+        'home-fifth': 'url(/bg_home2.jpg)',
+        'home-seventh': 'url(/bg_home3.jpg)',
+        'footer-building': 'url(/img_footer.png)',
       },
       colors: {
         'gray-2e': '#2e2e2e',

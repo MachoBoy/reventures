@@ -1,3 +1,4 @@
+import Image from 'next/image';
 interface Props {
   icon: string;
   title: string;
@@ -7,7 +8,15 @@ interface Props {
 const MainAboutItem = ({ icon, title, desc }: Props) => {
   return (
     <div className='flex flex-row justify-between items-center max-w-[599px] mt-8'>
-      <div className='circle w-36 h-36 rounded-full border-2 border-solid border-black'></div>
+      <div className='circle w-36 h-36 rounded-full'>
+        <Image
+          src={icon}
+          layout='responsive'
+          width={144}
+          height={144}
+          alt='icon'
+        />
+      </div>
       <div className='flex flex-col'>
         <h6 className='text-gray-40 font-bold text-[26px] uppercase'>
           {title}

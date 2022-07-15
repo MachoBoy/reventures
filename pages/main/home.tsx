@@ -3,13 +3,37 @@ import Image from 'next/image';
 import MainSectionTitle from '../../components/main-section-title/mainSectionTitle';
 import MainAboutItem from '../../components/main-about-item/mainAboutItem';
 import PortfolioCard from '../../components/portfolio-card/portfolioCard';
-import { aboutData, investCountData } from '../data/home-data';
 import MainInvestCount from '../../components/main-invest-count/mainInvestCount';
+import AllRightsReserve from '../../components/all-rights-reserve/allRightsReserve';
+import { aboutData, investCountData } from '../data/home-data';
 
 const Home = () => {
   return (
     <div className='w-full'>
-      <div className='top-section h-[867px] bg-black z-10'></div>
+      <div className='pt-[320px] pl-[358px] relative top-section h-[867px] bg-black'>
+        <video
+          autoPlay
+          loop
+          muted
+          className='w-full h-full absolute left-0 -top-14'
+        >
+          <source src='main.mp4' type='video/mp4' />
+        </video>
+        <div className='absolute -left-28 rotate-90 top-1/2'>
+          <AllRightsReserve />
+        </div>
+        <div className='relative'>
+          <div className='flex flex-row items-center'>
+            <div className='w-[5px] h-[93px] bg-[#64676A]'></div>
+            <div className='ml-5 text-white text-[120px] font-semibold'>
+              RE:VENTURES
+            </div>
+          </div>
+          <div className='ml-8 text-4xl text-[#A2A4A7]'>
+            Venture for the early starts-up
+          </div>
+        </div>
+      </div>
       <div className='second-section m-auto flex justify-center items-center'>
         <div className='about-left relative w-full max-w-[710px] h-[845px]'>
           <div className='block w-full h-full shadow-2xl absolute inset-0 p-14 z-20 bg-white -mt-11'>
@@ -32,7 +56,15 @@ const Home = () => {
           </div>
         </div>
         <div className='about-right relative ml-20'>
-          <div className='relative w-[409px] h-[562px] bg-slate-800 z-20'></div>
+          <div className='relative w-[409px] h-[562px] bg-slate-800 z-20'>
+            <Image
+              src='/img_home.png'
+              layout='responsive'
+              width={409}
+              height={562}
+              alt='airplain'
+            />
+          </div>
           <div className='w-[409px] h-[562px] z-10 absolute left-9 top-9 bg-gray-500'></div>
           <Link href='/about'>
             <a className='block mt-20 w-full text-right text-[#6D7278] text-[27px]'>
@@ -41,10 +73,11 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center'>
-        <p className='text-center text-[#FEFEFE] text-3xl w-full max-w-xl'>
-          리벤처스는 혁신적 창업가와 투자자가 함께 10년의 미래의 변화에 도전하는
-          엑셀러레이터 입니다.
+      <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat'>
+        <div className='text-white text-[80px] font-semibold'>RE:VENTURES</div>
+        <p className='text-center text-[#FEFEFE] text-3xl w-full max-w-2xl whitespace-pre-wrap'>
+          리벤처스는 혁신적 창업가와 투자자가 함께 {'\u000A'} 10년의 미래의
+          변화에 도전하는 엑셀러레이터 입니다.
         </p>
       </div>
       <div className='fourth-section w-full pt-16 pb-28'>
@@ -54,7 +87,7 @@ const Home = () => {
           <PortfolioCard />
         </div>
       </div>
-      <div className='fifth-section w-full pt-10 pb-14 bg-black'>
+      <div className='fifth-section w-full pt-10 pb-14 bg-home-fifth bg-center bg-cover bg-no-repeat'>
         <div className='w-full inline-block'>
           <div className='w-full max-w-[1143px] m-auto'>
             <MainSectionTitle title='our investment history' isDark={true} />
@@ -110,7 +143,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='seventh-section pt-[121px] pb-[92px] bg-slate-500 text-center'>
+      <div className='seventh-section pt-[121px] pb-[92px] bg-slate-500 text-center bg-home-seventh bg-center bg-no-repeat'>
         <div className='text-white text-3xl'>IR, 창업, 제휴 및 협업 문의</div>
         <div className='mt-5 text-gray-eee text-xl'>
           리벤처스와 함께 성장하고 싶으신가요?
