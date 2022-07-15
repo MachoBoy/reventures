@@ -22,6 +22,9 @@ module.exports = {
     },
 
     extend: {
+      backgroundImage: {
+        'tips-top': 'url(/bg_tips1.jpg)',
+      },
       colors: {
         'gray-2e': '#2e2e2e',
         'gray-40': '#404040',
