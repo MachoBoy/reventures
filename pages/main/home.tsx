@@ -3,7 +3,7 @@ import Image from 'next/image';
 import MainSectionTitle from '../../components/main-section-title/mainSectionTitle';
 import MainAboutItem from '../../components/main-about-item/mainAboutItem';
 import PortfolioCard from '../../components/portfolio-card/portfolioCard';
-import { aboutData, investCountData } from './home-data';
+import { aboutData, investCountData } from '../data/home-data';
 import MainInvestCount from '../../components/main-invest-count/mainInvestCount';
 
 const Home = () => {
