@@ -36,7 +36,7 @@ const Footer = () => {
           )}
         </div>
       </div>
-      <div className='w-full py-6 bg-black flex justify-center'>
+      <div className='w-full max-w-[1920px] py-6 bg-black flex justify-center mx-auto'>
         <div className='w-full max-w-[1142px] text-[#6D7278] flex justify-between'>
           <div className=''>
             Connect with us&nbsp;
