@@ -31,6 +31,7 @@ module.exports = {
         'about-philosophy': 'url(/bg_about2.jpg)',
         'team-top': 'url(/bg_team.jpg)',
         'contact-top': 'url(/bg_contact.jpg)',
+        'portfolio-top': 'url(/bg_portfolio.jpg)',
         'home-third': 'url(/bg_home1.jpg)',
         'home-fifth': 'url(/bg_home2.jpg)',
         'home-seventh': 'url(/bg_home3.jpg)',

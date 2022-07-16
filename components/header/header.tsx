@@ -45,7 +45,7 @@ const Header = () => {
               return (
                 <li
                   key={index}
-                  className='flex flex-col justify-center items-center'
+                  className='relative flex flex-col justify-center items-center'
                 >
                   <Link href={link}>
                     <a
@@ -59,7 +59,7 @@ const Header = () => {
                     </a>
                   </Link>
                   <div
-                    className={`mt-3 w-[53px] h-[3px] ${
+                    className={`absolute mt-10 w-[53px] h-[3px] ${
                       link === router.pathname
                         ? 'bg-[#707070]'
                         : 'bg-transparent'
