@@ -1,16 +1,27 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 
 const About = () => {
   return (
     <div className='w-full'>
-      <div className='about-top h-[479px]'>
-        <div className='flex flex-col'>
-          <div className='text-7xl'>About</div>
-          <div className='text-4xl text-[##FEFEFE]'>도전하는 모든 투자자와</div>
-          <div className='text-4xl text-[##FEFEFE]'>창업가의 파트너</div>
+      <div className='about-top h-[479px] bg-about-top flex justify-center items-center'>
+        <div className='flex flex-row justify-between min-w-[1000px] mx-auto'>
+          <div>
+            <div className='text-7xl text-[#FFFFFF] font-semibold'>About</div>
+            <div className='mt-5 text-4xl text-[#FEFEFE]'>
+              도전하는 모든 투자자와
+            </div>
+            <div className='text-4xl text-[#FEFEFE]'>창업가의 파트너</div>
+          </div>
+          <div>
+            <div className='font-bold text-white text-[130px] w-[206px] flex flex-row'>
+              RE <div className='-mt-3 text-[130px]'>:</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className='w-full max-w-[1142px] mx-auto'>
+      <div className='pt-20 w-full max-w-[1142px] mx-auto'>
         <MainSectionTitle title='what we do' isDark={false} />
         <h3 className='mt-9 text-[32px] font-semibold text-[#3D3D3D]'>
           초기 스타트업을 발굴하고 투자합니다.
@@ -54,7 +65,7 @@ const About = () => {
           그들의 다음 단계로의 도약을 이끌어냅니다.
         </p>
       </div>
-      <div className='philosophy mt-12 bg-slate-500 pt-16 pb-20'>
+      <div className='philosophy mt-12 bg-about-philosophy bg-center bg-no-repeat pt-16 pb-20'>
         <div className='w-full max-w-[1142px] mx-auto'>
           <MainSectionTitle title='philosophy' isDark={true} />
           <div className='mt-8 text-[32px] font-semibold text-gray-eee'>
@@ -82,15 +93,53 @@ const About = () => {
       <div className='py-28 w-full'>
         <div className='w-full max-w-[1142px] mx-auto'>
           <MainSectionTitle title='corporate identity' isDark={false} />
-          <div className='w-full flex flex-row gap-14'>
-            <div></div>
-            <div className='flex flex-col w-full max-w-[530px]'>
+          <div className='mt-14 w-full flex flex-row gap-14'>
+            <div className='flex flex-col gap-y-7'>
+              <div className='w-[557px] h-[192px]'>
+                <Image
+                  layout='responsive'
+                  src='/logo1.png'
+                  width={557}
+                  height={192}
+                  alt='big-logo'
+                />
+              </div>
+              <div className='flex flex-row gap-x-7'>
+                <div className='w-[265px] h-[140px]'>
+                  <Image
+                    layout='responsive'
+                    src='/logo2.png'
+                    width={265}
+                    height={140}
+                    alt='small-logo'
+                  />
+                </div>
+                <div className='w-[265px] h-[140px]'>
+                  <Image
+                    layout='responsive'
+                    src='/logo3.png'
+                    width={265}
+                    height={140}
+                    alt='small-logo'
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='flex flex-col w-full max-w-[530px] text-[#3D3D3D] text-2xl'>
               <p>
                 혁신가들의 순수한 이념과 계속되는 도전이 활발하게 지속될 수
-                있도록 사회가 되는 것을 염원하는 (Re:) 그리고 혁신가들의 모험을
-                함께하기 위해 Venture(s)의 의미는 파트너로서 멀리서 응원이 아닌
-                함께 성공을 향해 달리는 Own-Onership-Partner가 되고자 합니다.
+                있도록 사회가 되는 것을 염원하는 (Re:)
               </p>
+              <p className='mt-20'>
+                그리고 혁신가들의 모험을 함께하기 위해 Venture(s)의 의미는
+                파트너로서 멀리서 응원이 아닌 함께 성공을 향해 달리는
+                Own-Onership-Partner가 되고자 합니다.
+              </p>
+              <Link href='/'>
+                <a className='mt-[42px] bg-black w-[362px] h-[77px] text-2xl text-white flex justify-center items-center'>
+                  CI 다운로드
+                </a>
+              </Link>
             </div>
           </div>
         </div>
