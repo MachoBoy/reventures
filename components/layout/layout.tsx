@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
@@ -6,12 +7,20 @@ interface Props {
 }
 
 const Layout = ({ children }: Props) => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
+    mounted && (
+      <>
+        <Header />
+        <main className='w-full min-w-[1560px] max-w-[1920px] overflow-hidden'>
+          {children}
+        </main>
+        <Footer />
+      </>
+    )
   );
 };
 

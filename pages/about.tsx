@@ -73,7 +73,7 @@ const About = () => {
             <br /> 실패도 두려워하지 않는 용기 그 시작을
             <br /> 함께하고자 노력을 아끼지 않는 사람들이 있습니다.
           </div>
-          <p className='w-full max-w-[520px] mt-8 text-2xl font-light text-gray-eee'>
+          <div className='w-full max-w-[520px] mt-8 text-2xl font-light text-gray-eee'>
             <p>
               리벤처스는 가능성 있는 혁신가들이
               <br /> 자신의 가치를 알아보는 파트너와 만나는 지점에서
@@ -87,7 +87,7 @@ const About = () => {
               투자자와 스타트업의 파트너, 리벤처스
               <br /> All of Starts up’s Partner, Reventures
             </p>
-          </p>
+          </div>
         </div>
       </div>
       <div className='py-28 w-full'>
