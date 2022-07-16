@@ -2,7 +2,7 @@ import ContactFormHeader from '../components/contact-form-header/contactFormHead
 import ContactFormInput from '../components/contact-form-input/contact-form-input';
 import ContactFormTextarea from '../components/contact-form-textarea/contact-form-textarea';
 import ContactFormCategory from '../components/contact-form-category/ContactFormCategory';
-import { contactCategory } from './data/contact-data';
+import { contactCategory } from '../data/contact-data';
 
 const Contact = () => {
   return (

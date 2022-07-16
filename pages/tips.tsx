@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import TipsApplyHow from '../components/tips-apply-how/tipsApplyHow';
-import { tipsApplyData, tipsCategoryData } from './data/tips-data';
+import { tipsApplyData, tipsCategoryData } from '../data/tips-data';
 
 const Tips = () => {
   return (

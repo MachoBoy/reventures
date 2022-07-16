@@ -1,6 +1,6 @@
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import TeamCard from '../components/team-card/team-card';
-import { teamData } from './data/team-data';
+import { teamData } from '../data/team-data';
 const Team = () => {
   return (
     <div className='w-full max-w-[1920px] mx-auto'>

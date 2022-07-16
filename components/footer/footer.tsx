@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FooterInfo from '../footer-info/footerInfo';
 import AllRightsReserve from '../all-rights-reserve/allRightsReserve';
-import { footerData } from '../../pages/data/footer-data';
+import { footerData } from '../../data/footer-data';
 
 const Footer = () => {
   return (

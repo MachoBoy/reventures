@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import MainSectionTitle from '../../components/main-section-title/mainSectionTitle';
-import MainAboutItem from '../../components/main-about-item/mainAboutItem';
-import PortfolioCard from '../../components/portfolio-card/portfolioCard';
-import MainInvestCount from '../../components/main-invest-count/mainInvestCount';
-import AllRightsReserve from '../../components/all-rights-reserve/allRightsReserve';
-import PortfolioSlider from '../../components/portfolio-slider/portfolioSlider';
+import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
+import MainAboutItem from '../components/main-about-item/mainAboutItem';
+import PortfolioCard from '../components/portfolio-card/portfolioCard';
+import MainInvestCount from '../components/main-invest-count/mainInvestCount';
+import AllRightsReserve from '../components/all-rights-reserve/allRightsReserve';
+import PortfolioSlider from '../components/portfolio-slider/portfolioSlider';
 import { aboutData, investCountData } from '../data/home-data';
 import { portfolioData } from '../data/portfolio-data';
 
@@ -135,12 +135,18 @@ const Home = () => {
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
                   108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
                 </div>
-                {/* <Image
+                <Image
                   width='558'
                   height='522'
                   alt='google-map'
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.mapKey}`}
-                /> */}
+                  src='/img_map1.png'
+                />
+                {/* <Image
+                    width='558'
+                    height='522'
+                    alt='google-map'
+                    src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.mapKey}`}
+                  /> */}
               </div>
               <div className='w-full'>
                 <div className='text-gray-eee text-xl font-bold'>
@@ -149,6 +155,12 @@ const Home = () => {
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
                   21, Gungdong-ro, Yuseong-gu, Daejeon, Republic of Korea
                 </div>
+                <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src='/img_map2.png'
+                />
                 {/* <Image
                   width='558'
                   height='522'

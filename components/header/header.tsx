@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useScroll } from 'framer-motion';
-import { navData } from '../../pages/data/nav-data';
+import { navData } from '../../data/nav-data';
 
 // Insight 메뉴 추가되면 max-w-[699px]
 const Header = () => {
