@@ -22,6 +22,9 @@ module.exports = {
     },
 
     extend: {
+      boxShadow: {
+        portfolio: '0px 10px 29px #00000027',
+      },
       backgroundImage: {
         'tips-top': 'url(/bg_tips1.jpg)',
         'about-top': 'url(/bg_about1.jpg)',

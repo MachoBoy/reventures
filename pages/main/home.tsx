@@ -5,7 +5,9 @@ import MainAboutItem from '../../components/main-about-item/mainAboutItem';
 import PortfolioCard from '../../components/portfolio-card/portfolioCard';
 import MainInvestCount from '../../components/main-invest-count/mainInvestCount';
 import AllRightsReserve from '../../components/all-rights-reserve/allRightsReserve';
+import PortfolioSlider from '../../components/portfolio-slider/portfolioSlider';
 import { aboutData, investCountData } from '../data/home-data';
+import { portfolioData } from '../data/portfolio-data';
 
 const Home = () => {
   return (
@@ -80,10 +82,26 @@ const Home = () => {
         </p>
       </div>
       <div className='fourth-section w-full pt-16 pb-28'>
-        <div className='w-full max-w-[1143px] m-auto'>
+        <div className='w-full max-w-[1200px] m-auto'>
           <MainSectionTitle title='portfolio' isDark={false} />
-          <div className='mt-9'></div>
-          <PortfolioCard />
+          <div className='mt-9'>
+            <PortfolioSlider>
+              {portfolioData.map(
+                ({ stage, logo, company, sector, desc }, index) => {
+                  return (
+                    <PortfolioCard
+                      key={index}
+                      stage={stage}
+                      logo={logo}
+                      company={company}
+                      sector={sector}
+                      desc={desc}
+                    />
+                  );
+                }
+              )}
+            </PortfolioSlider>
+          </div>
         </div>
       </div>
       <div className='fifth-section w-full pt-10 pb-14 bg-home-fifth bg-center bg-cover bg-no-repeat'>

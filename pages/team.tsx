@@ -3,7 +3,7 @@ import TeamCard from '../components/team-card/team-card';
 import { teamData } from './data/team-data';
 const Team = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-[1920px] mx-auto'>
       <div className='w-full h-[390px] bg-team-top flex flex-col justify-center items-center'>
         <div className='text-white text-7xl font-semibold'>Team</div>
         <div className='mt-4 text-white text-4xl'>

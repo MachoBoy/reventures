@@ -1,20 +1,30 @@
 import Image from 'next/image';
 
-const PortfolioCard = () => {
+interface Props {
+  stage: string;
+  logo: string;
+  company: string;
+  sector: string;
+  desc: string;
+}
+
+const PortfolioCard = ({ stage, logo, company, sector, desc }: Props) => {
   return (
-    <div className='py-5 px-4 bg-white w-[363px] h-[455px] shadow-xl'>
-      <div className='tier inline-block px-2 pt-[6px] pb-2 border-[1px] border-solid border-[#333] text-sm'>
-        Pre-A
+    <div className='my-9 mx-2'>
+      <div className='py-5 px-4 bg-white w-[363px] h-[455px] shadow-portfolio'>
+        <div className='tier inline-block px-2 pt-[6px] pb-2 border-[1px] border-solid border-[#333] text-sm'>
+          {stage}
+        </div>
+        <div className='mt-7 w-3/4 h-1/6 relative mx-auto'>
+          <Image layout='fill' objectFit='contain' src={logo} alt='logo' />
+        </div>
+        <div className='mt-12 divider w-full h-[1px] bg-[#979797] bg-opacity-40'></div>
+        <h5 className='mt-8 text-[#333333] text-xl'>{company}</h5>
+        <div className='mt-5 inline-block bg-[#6D7278] py-[6px] px-[10px] text-[#FEFEFED9] text-sm'>
+          {sector}
+        </div>
+        <p className='mt-5 text-base text-[#666666]'>{desc}</p>
       </div>
-      <div></div>
-      <div className='divider w-full h-[1px] bg-[#979797] bg-opacity-40'></div>
-      <h5 className='mt-8 text-[#333333] text-xl'>㈜HN노바텍</h5>
-      <div className='mt-5 inline-block bg-[#6D7278] py-[6px] px-[10px] text-[#FEFEFED9] text-sm'>
-        Food-Tech
-      </div>
-      <p className='mt-5 text-base text-[#666666]'>
-        해조류 추출 헴분자 기반 대체육류 식품개발
-      </p>
     </div>
   );
 };

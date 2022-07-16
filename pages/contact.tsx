@@ -6,7 +6,7 @@ import { contactCategory } from './data/contact-data';
 
 const Contact = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-[1920px] mx-auto'>
       <div className='w-full h-[390px] bg-contact-top flex flex-col justify-center items-center'>
         <div className='text-white text-7xl font-semibold'>Contact</div>
         <div className='mt-4 text-white text-4xl'>Apply</div>

@@ -4,8 +4,8 @@ import MainSectionTitle from '../components/main-section-title/mainSectionTitle'
 
 const About = () => {
   return (
-    <div className='w-full'>
-      <div className='about-top h-[479px] bg-about-top flex justify-center items-center'>
+    <div className='w-full max-w-[1920px] mx-auto'>
+      <div className='about-top h-[479px] bg-about-top bg-center bg-no-repeat flex justify-center items-center'>
         <div className='flex flex-row justify-between min-w-[1000px] mx-auto'>
           <div>
             <div className='text-7xl text-[#FFFFFF] font-semibold'>About</div>
