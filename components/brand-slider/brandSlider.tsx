@@ -6,22 +6,19 @@ interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
-const PortfolioSlider = ({ children }: Props) => {
+const BrandSlider = ({ children }: Props) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerPadding: '30px',
-    centerMode: true,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    centerPadding: '0',
+    centerMode: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    customPaging: () => (
-      <div className='w-[10px] h-[10px] rounded-full bg-[#7C7C7C92] mx-auto'></div>
-    ),
   };
   return <Slider {...settings}>{children}</Slider>;
 };
 
-export default PortfolioSlider;
+export default BrandSlider;

@@ -1,7 +1,7 @@
 import ContactFormHeader from '../components/contact-form-header/contactFormHeader';
 import ContactFormInput from '../components/contact-form-input/contact-form-input';
 import ContactFormTextarea from '../components/contact-form-textarea/contact-form-textarea';
-import ContactFormCategory from '../components/contact-form-category/ContactFormCategory';
+import SectorCategoryButton from '../components/sector-category-button/SectorCategoryButton';
 import { contactCategory } from '../data/contact-data';
 
 const Contact = () => {
@@ -58,9 +58,18 @@ const Contact = () => {
           산업기술 분야를 선택해주세요
         </div>
         <div className='w-full'>
-          {contactCategory.map((category, index) => {
-            return <ContactFormCategory key={index} name={category} />;
-          })}
+          {contactCategory
+            .filter((category) => category !== 'All')
+            .map((category, index) => {
+              return (
+                <SectorCategoryButton
+                  key={index}
+                  name={category}
+                  color='#0000001A'
+                  textColor='#666666D9'
+                />
+              );
+            })}
         </div>
         <div className='mt-12'>
           <ContactFormHeader

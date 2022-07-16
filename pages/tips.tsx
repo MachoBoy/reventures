@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
+import BrandSlider from '../components/brand-slider/brandSlider';
 import TipsApplyHow from '../components/tips-apply-how/tipsApplyHow';
+import BrandBox from '../components/brand-box/brandBox';
 import { tipsApplyData, tipsCategoryData } from '../data/tips-data';
+import { portfolioData } from '../data/portfolio-data';
 
 const Tips = () => {
   return (
@@ -58,6 +61,13 @@ const Tips = () => {
         </div>
         <div className='mt-24 w-full'>
           <MainSectionTitle title='tips 보육기업' isDark={false} />
+          <div className='mt-7'>
+            <BrandSlider>
+              {portfolioData.map(({ logo }, index) => {
+                return <BrandBox key={index} logo={logo} />;
+              })}
+            </BrandSlider>
+          </div>
         </div>
 
         <div className='mt-24 w-full'>

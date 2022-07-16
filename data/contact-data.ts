@@ -1,4 +1,5 @@
 export const contactCategory = [
+  'All',
   'Bio/Healthcare',
   'Energy/Eco-friendly',
   'Energy/Eco-friendly',
