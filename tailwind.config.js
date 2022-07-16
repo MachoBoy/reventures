@@ -27,6 +27,7 @@ module.exports = {
         'about-top': 'url(/bg_about1.jpg)',
         'about-philosophy': 'url(/bg_about2.jpg)',
         'team-top': 'url(/bg_team.jpg)',
+        'contact-top': 'url(/bg_contact.jpg)',
         'home-third': 'url(/bg_home1.jpg)',
         'home-fifth': 'url(/bg_home2.jpg)',
         'home-seventh': 'url(/bg_home3.jpg)',

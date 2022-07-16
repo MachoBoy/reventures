@@ -56,7 +56,7 @@ const Home = () => {
           </div>
         </div>
         <div className='about-right relative ml-20'>
-          <div className='relative w-[409px] h-[562px] bg-slate-800 z-20'>
+          <div className='relative w-[430px] h-[562px] z-20'>
             <Image
               src='/img_home.png'
               layout='responsive'
@@ -65,7 +65,6 @@ const Home = () => {
               alt='airplain'
             />
           </div>
-          <div className='w-[409px] h-[562px] z-10 absolute left-9 top-9 bg-gray-500'></div>
           <Link href='/about'>
             <a className='block mt-20 w-full text-right text-[#6D7278] text-[27px]'>
               Read More &#10132;
