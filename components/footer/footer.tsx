@@ -6,7 +6,7 @@ import { footerData } from '../../data/footer-data';
 
 const Footer = () => {
   return (
-    <div className='w-full min-w-[1560px] max-w-[1920px] overflow-hidden'>
+    <div className='w-full min-w-[1560px] max-w-[1920px] overflow-hidden mx-auto'>
       <div className='w-full max-w-[1920px] mx-auto flex flex-col bg-[#222222] bg-footer-building bg-bottom bg-no-repeat pb-32'>
         <div className='w-full max-w-[1093px] py-12 mx-auto'>
           <Image

@@ -138,18 +138,18 @@ const Home = () => {
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
                   108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
                 </div>
-                {/* <Image
-                  width='558'
-                  height='522'
-                  alt='google-map'
-                  src='/img_map1.png'
-                /> */}
                 <Image
                   width='558'
                   height='522'
                   alt='google-map'
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.GOOGLE_MAP_KEY}`}
+                  src='/img_map1.png'
                 />
+                {/* <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.GOOGLE_MAP_KEY}`}
+                /> */}
               </div>
               <div className='w-full'>
                 <div className='text-gray-eee text-xl font-bold'>

@@ -11,12 +11,13 @@ const Layout = ({ children }: Props) => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
   if (!mounted) return null;
   return (
     mounted && (
       <>
         <Header />
-        <main className='w-full min-w-[1560px] max-w-[1920px] overflow-hidden'>
+        <main className='w-full min-w-[1560px] max-w-[1920px] mx-auto overflow-hidden'>
           {children}
         </main>
         <Footer />
