@@ -10,6 +10,9 @@ import { aboutData, investCountData } from '../data/home-data';
 import { portfolioData } from '../data/portfolio-data';
 
 const Home = () => {
+  // console.log(process.env.GOOGLE_MAP_KEY);
+  // console.log(process.env.WORDPRESS_URL);
+
   return (
     <div className='w-full'>
       <div className='pt-[320px] pl-[358px] relative top-section h-[867px] bg-black'>
@@ -135,18 +138,18 @@ const Home = () => {
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
                   108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
                 </div>
-                <Image
+                {/* <Image
                   width='558'
                   height='522'
                   alt='google-map'
                   src='/img_map1.png'
+                /> */}
+                <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.GOOGLE_MAP_KEY}`}
                 />
-                {/* <Image
-                    width='558'
-                    height='522'
-                    alt='google-map'
-                    src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.mapKey}`}
-                  /> */}
               </div>
               <div className='w-full'>
                 <div className='text-gray-eee text-xl font-bold'>
@@ -165,7 +168,7 @@ const Home = () => {
                   width='558'
                   height='522'
                   alt='google-map'
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=36.3631304,127.3447129&zoom=14&size=558x522&maptype=roadmap&key=${process.env.mapKey}`}
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=36.3631304,127.3447129&zoom=14&size=558x522&maptype=roadmap&key=${process.env.GOOGLE_MAP_KEY}`}
                 /> */}
               </div>
             </div>
