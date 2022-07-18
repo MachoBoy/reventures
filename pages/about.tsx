@@ -9,10 +9,10 @@ const About = () => {
         <div className='flex flex-row justify-between min-w-[1000px] mx-auto'>
           <div>
             <div className='text-7xl text-[#FFFFFF] font-semibold'>About</div>
-            <div className='mt-5 text-4xl text-[#FEFEFE]'>
-              도전하는 모든 투자자와
+            <div className='mt-5 text-4xl text-[#FEFEFE]'>벤처투자를 위한</div>
+            <div className='text-4xl text-[#FEFEFE]'>
+              투자자와 스타트업의 파트너, 리벤처스
             </div>
-            <div className='text-4xl text-[#FEFEFE]'>창업가의 파트너</div>
           </div>
           <div>
             <div className='font-bold text-white text-[130px] w-[206px] flex flex-row'>
@@ -24,45 +24,44 @@ const About = () => {
       <div className='pt-20 w-full max-w-[1142px] mx-auto'>
         <MainSectionTitle title='what we do' isDark={false} />
         <h3 className='mt-9 text-[32px] font-semibold text-[#3D3D3D]'>
-          초기 스타트업을 발굴하고 투자합니다.
+          더 나은 변화에 끊임없이 도전하는 창업가를 발굴합니다.
         </h3>
         <p className='mt-9 text-2xl font-light text-[#3D3D3D]'>
-          좋은 혁신가와 초기 스타트업을 발굴하고 그들의 가치를 알아보는 것은
-          생각보다 어려운 일입니다.
-          <br /> 창업 초기엔 참고할 수 있는 가시적인 성과 지표가 많지 않기
-          때문입니다.
-          <br /> 따라서 초기 투자는 스타트업의 잠재력과 진가를 얼마나 잘
-          예측하는지가 중요하므로 투자자의 전문성과 충분한 경험을 필요로 합니다.
+          리벤처스는 계속 도전하고자 하는 끊임없는 열정과 도전을 찾습니다.
+          <br />
+          투자사와 투자자를 넘어서 함께 고민하고 도전하는 열정에 산업계 및 각
+          분야 전문가의 전문성과 경험을 기반으로 스타트업의 성장에 기여하고,
+          외부의 시각을 통해 객관적인 방향을 제시하려고 합니다.
           <br />
           <br />
-          리벤처스는 기술창업 경험자들을 비롯해 산업계, 연구계 출신 구성원들의
-          노하우와 네트워크 그리고 자체 구축한 발굴 시스템으로 잠재력 있는
-          혁신가들을 만나고 있습니다.
-          <br /> 예비창업부터 Seed, Pre-Series A, Series A 단계에 이르기까지
-          폭넓은 초기 투자를 지향하면서 스타트업과 시작을 함께 하고 있습니다.
+          리벤처스는 산업계 출신, EXIT경험이 있는 구성원과, 전문가 구성원의
+          노하우와 각 산업계, 연구계 네트워크를 통한 기업발굴 및 성장을 지원하며
+          창업가를 만나고 있으며, Company-Builder로서의 역할부터 초기 투자 및,
+          전문성 있는 Pre-Series A, Series A, Series B 단계에 이르는 폭넓은
+          분야의 스타트업과 함께 하고 있습니다.
         </p>
       </div>
       <div className='mt-16 w-full max-w-[1142px] mx-auto'>
         <MainSectionTitle title='value add' isDark={false} />
         <h3 className='mt-9 text-[32px] font-semibold text-[#3D3D3D]'>
-          초기 스타트업의 성장을 돕습니다.
+          창업가의 성장에 기여하며, 가장 가까이서 지속하는 파트너가
+          되고자합니다.
         </h3>
         <p className='mt-9 text-2xl font-light text-[#3D3D3D]'>
-          창업 초기는 가장 도움이 필요한 시기이지만, 아이러니하게 가장 도움받기
-          어려운 때이기도 합니다.
-          <br /> 하지만 이 시기에 사업을 크게 키울 수 있는 역량이 형성되기
-          때문에 성장이란 여정의 방향키를 함께 잡아줄 좋은 파트너를 만나
-          시작하는 것이 중요합니다.
-          <br /> 리벤처스는 투자금에 더하여 스타트업이 보다 대담한 시도를 할 수
-          있도록 다양한 분야에서 지원하고 있습니다.
+          초기 창업가에게 가장 필요한건 기업의 방향성을 끝까지 유지시킬 수 있는
+          힘과 이를 지원할 수 있는 풍부한 네트워크입니다.
           <br />
-          <br /> 스타트업은 연속된 선택과 결정의 산물이라 해도 과언이 아닙니다.
+          하지만 부족한 자원에 모든 것을 달성하기 어렵기 때문에 스타트업과
+          산업에 대한 이해도가 높고, 지원이 가능한 파트너를 만나 시작하는 것이
+          중요합니다.
+          <br /> 리벤처스는 투자와 TIPS프로그램과 같은 역할에 더하여 창업가가
+          확살하게 성장할 수 있는 길로 함께 가고자 합니다.
           <br />
-          결정과 행동의 주체는 창업가들이지만 리벤처스는 그 과정을 함께 고민하고
-          최선의 선택지를 같이 찾아가며 불확실성을 줄여갑니다.
-          <br /> 리벤처스 패밀리사의 성장을 위해 네트워크 연결, 후속투자유치
-          지원, 홍보 및 채용 지원에 이르기까지 다양한 방식으로 스타트업을 도우며
-          그들의 다음 단계로의 도약을 이끌어냅니다.
+          <br />
+          스타트업에 지속적으로 찾아오는 많은 풍파를 이겨나갈 수 있는 파트너로
+          리벤처스는 후속투자와 성장지원 그리고 네트워크연결 뿐만 아니라,
+          패밀리사와 외부 패밀리사와의 연계 등 다양한 프로그램으로 스타트업을
+          도우며 항상 다음을, 미래를 함께하고자 합니다.
         </p>
       </div>
       <div className='philosophy mt-12 bg-about-philosophy bg-center bg-no-repeat pt-16 pb-20'>
