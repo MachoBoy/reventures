@@ -10,11 +10,11 @@ const PortfolioSlider = ({ children }: Props) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 3,
-    slidesToScroll: 1,
-    centerPadding: '30px',
-    centerMode: true,
+    slidesToScroll: 3,
+    // centerPadding: '30px',
+    // centerMode: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     customPaging: () => (

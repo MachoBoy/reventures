@@ -7,12 +7,10 @@ import MainInvestCount from '../components/main-invest-count/mainInvestCount';
 import AllRightsReserve from '../components/all-rights-reserve/allRightsReserve';
 import PortfolioSlider from '../components/portfolio-slider/portfolioSlider';
 import { aboutData, investCountData } from '../data/home-data';
-import { portfolioData } from '../data/portfolio-data';
+import { PortfolioProps } from '../data/portfolio-data';
 
-const Home = () => {
-  // console.log(process.env.GOOGLE_MAP_KEY);
-  // console.log(process.env.WORDPRESS_URL);
-
+const Home = ({ portfolioPosts }: PortfolioProps) => {
+  console.log(portfolioPosts);
   return (
     <div className='w-full'>
       <div className='pt-[320px] pl-[358px] relative top-section h-[867px] bg-black'>
@@ -89,16 +87,17 @@ const Home = () => {
           <MainSectionTitle title='portfolio' isDark={false} />
           <div className='mt-9'>
             <PortfolioSlider>
-              {portfolioData.map(
-                ({ stage, logo, company, sector, desc }, index) => {
+              {portfolioPosts.map(
+                ({ stage, logo, companyName, sector, companyDesc }, index) => {
                   return (
                     <PortfolioCard
                       key={index}
                       stage={stage}
                       logo={logo}
-                      company={company}
+                      companyName={companyName}
                       sector={sector}
-                      desc={desc}
+                      companyDesc={companyDesc}
+                      openModal={() => {}}
                     />
                   );
                 }

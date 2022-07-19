@@ -73,13 +73,14 @@ const Tips = () => {
         <div className='mt-24 w-full'>
           <MainSectionTitle title='tips 지원하기' isDark={false} />
           <div className='mt-16'>
-            {tipsApplyData.map(({ icon, title, desc }, index) => {
+            {tipsApplyData.map(({ icon, title, desc, href }, index) => {
               return (
                 <TipsApplyHow
                   key={index}
                   icon={icon}
                   title={title}
                   desc={desc}
+                  href={href}
                 />
               );
             })}

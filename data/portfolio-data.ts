@@ -1,3 +1,36 @@
+// 컴포넌트 포트폴리오 props 타입
+export interface PortfolioProps {
+  portfolioPosts: PostType[];
+  pageInfo?: PageInfoType;
+}
+// 포트폴리오 타입
+export interface PortfolioType {
+  portfolio: PostType;
+}
+// 포트폴리오 포스트 타입
+export interface PostType {
+  stage: string | null;
+  ceoName: string | null;
+  logo: LogoType;
+  companyName: string | null;
+  companyDesc: string | null;
+  foundDate: string | null;
+  location: string | null;
+  sector: string | null;
+  __typename: string | null;
+}
+// 포트폴리오 로고 이미지 타입
+export interface LogoType {
+  sourceUrl: string;
+  __typename: string;
+}
+// 포트폴리오 페이지네이션 타입
+export interface PageInfoType {
+  endCursor: string | null;
+  hasNextPage: boolean | null;
+  __typename: string | null;
+}
+
 export const portfolioData = [
   {
     stage: 'Pre-A',

@@ -3,11 +3,13 @@ export const tipsApplyData = [
     icon: '/ico_home.png',
     title: 'HOMEPAGE',
     desc: 'TIPS 홈페이지 > APPLY',
+    href: 'http://www.jointips.or.kr/bbs/apply.php',
   },
   {
     icon: '/ico_email.png',
     title: 'E-Mail',
     desc: `자유양식의 사업계획서 또는 IR자료를 첨부하여 지원 \u000A E-Mail.apply@reventures.co.kr | FAX. 0507-0307-2001`,
+    href: 'mailto: apply@reventures.co.kr',
   },
 ];
 
