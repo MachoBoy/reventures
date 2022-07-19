@@ -2,6 +2,7 @@
 export interface PortfolioProps {
   portfolioPosts: PostType[];
   pageInfo?: PageInfoType;
+  categories?: CategoryType[];
 }
 // 포트폴리오 타입
 export interface PortfolioType {
@@ -28,6 +29,12 @@ export interface LogoType {
 export interface PageInfoType {
   endCursor: string | null;
   hasNextPage: boolean | null;
+  __typename: string | null;
+}
+
+export interface CategoryType {
+  categoryId: number | null;
+  name: string | null;
   __typename: string | null;
 }
 

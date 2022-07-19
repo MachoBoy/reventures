@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 interface Props {
   stage: string | null;
-  logo: LogoType;
+  logo: LogoType | null;
   companyName: string | null;
   sector: string | null;
   companyDesc: string | null;
@@ -32,17 +32,27 @@ const PortfolioCard = ({
         } `}
         onClick={() => openModal(index)}
       >
-        <div className='tier inline-block px-2 pt-[6px] pb-2 border-[1px] border-solid border-[#333] text-sm'>
-          {stage}
-        </div>
-        <div className='mt-7 w-3/4 h-1/6 relative mx-auto'>
-          <Image
-            layout='fill'
-            objectFit='contain'
-            src={logo.sourceUrl}
-            alt='logo'
-          />
-        </div>
+        {stage ? (
+          <div className='tier inline-block px-2 pt-[6px] pb-2 border-[1px] border-solid border-[#333] text-sm'>
+            {stage}
+          </div>
+        ) : (
+          <div className='w-full h-[36px]'></div>
+        )}
+        {logo !== null ? (
+          <div className='mt-7 w-3/4 h-1/6 relative mx-auto'>
+            <Image
+              layout='fill'
+              objectFit='contain'
+              src={logo?.sourceUrl}
+              alt='logo'
+            />
+          </div>
+        ) : (
+          <div className='mt-7 w-3/4 h-1/6 relative mx-auto text-5xl text-center'>
+            {companyName}
+          </div>
+        )}
         <div className='mt-12 divider w-full h-[1px] bg-[#979797] bg-opacity-40'></div>
         <h5 className='mt-8 text-[#333333] text-xl'>{companyName}</h5>
         <div className='mt-5 inline-block bg-[#6D7278] py-[6px] px-[10px] text-[#FEFEFED9] text-sm'>

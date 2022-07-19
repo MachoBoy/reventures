@@ -36,25 +36,33 @@ const PortfolioCardDetail = ({ closeModal, activePost }: Props) => {
         </button>
       </div>
       <div className='flex flex-row items-center'>
-        <div className='relative w-[190px] h-[190px] border-[1px] border-[#0000001A] border-solid bg-white flex items-center'>
-          <div className='relative mx-auto w-3/4 h-1/2'>
-            <Image
-              layout='fill'
-              objectFit='contain'
-              src={logo.sourceUrl}
-              alt='logo'
-            />
+        {logo ? (
+          <div className='relative w-[190px] h-[190px] border-[1px] border-[#0000001A] border-solid bg-white flex items-center'>
+            <div className='relative mx-auto w-3/4 h-1/2'>
+              <Image
+                layout='fill'
+                objectFit='contain'
+                src={logo.sourceUrl}
+                alt='logo'
+              />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className='w-[190px] h-[190px] border-[1px] border-[#0000001A] border-solid bg-white flex justify-center items-center text-4xl'>
+            {companyName}
+          </div>
+        )}
         <div className='flex flex-col ml-16'>
           <div className='font-semibold text-[#333333] text-5xl'>
             {companyName}
           </div>
           <div className='flex flex-row mt-6'>
-            <div className='inline-block px-2 py-1 h-[30px] border-[1px] border-solid border-[#333] text-sm bg-white align-middle'>
-              {stage}
-            </div>
-            <div className='ml-[10px] inline-block px-2 py-1 h-[30px] bg-[#6D7278] text-[#FEFEFED9]'>
+            {stage ? (
+              <div className='mr-[10px] inline-block px-2 py-1 h-[30px] border-[1px] border-solid border-[#333] text-sm bg-white align-middle'>
+                {stage}
+              </div>
+            ) : null}
+            <div className='inline-block px-2 py-1 h-[30px] bg-[#6D7278] text-[#FEFEFED9]'>
               {sector}
             </div>
           </div>

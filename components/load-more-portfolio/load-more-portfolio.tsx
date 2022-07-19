@@ -1,32 +1,39 @@
-import { useEffect, useState } from 'react';
-import { useLazyQuery, ApolloError } from '@apollo/client';
-import { GET_PORTFOLIO_POSTS } from '../../lib/queries/portfolio/get-portfolio';
+import { useEffect, useState, KeyboardEvent } from 'react';
+import { useLazyQuery, useQuery, ApolloError } from '@apollo/client';
 import PortfolioCard from '../portfolio-card/portfolioCard';
 import LoadingButton from '../loading-button/loading-button';
+import SectorCategoryButton from '../sector-category-button/SectorCategoryButton';
+import { GET_PORTFOLIO_POSTS } from '../../lib/queries/portfolio/get-portfolio';
 import {
   PortfolioType,
   PostType,
   PageInfoType,
+  CategoryType,
 } from '../../data/portfolio-data';
 
 interface Props {
   posts: PostType[];
   pages?: PageInfoType;
   openModal: Function;
+  categories?: CategoryType[];
 }
 
-const LoadMorePortfolio = ({ posts, pages, openModal }: Props) => {
+const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
   const [postsData, setPostsData] = useState(posts ?? []);
   const [pageInfo, setPageInfo] = useState(pages);
   const [error, setError] = useState({});
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedSectorId, setSelectedSectorId] = useState(0);
+  const [sectorLoading, setSectorLoading] = useState(false);
 
   useEffect(() => {
     setPostsData(posts);
     setPageInfo(pages);
+    setSelectedSectorId(0);
   }, [posts, pages]);
 
   const setPosts = (posts: any) => {
-    console.log(posts);
+    //console.log(posts);
     if (!posts || !posts?.nodes || !posts?.pageInfo) {
       return;
     }
@@ -35,15 +42,22 @@ const LoadMorePortfolio = ({ posts, pages, openModal }: Props) => {
       (post: PortfolioType) => post.portfolio
     );
 
-    const newPosts = postsData.concat(portfolioPosts);
-    // console.log(newPosts);
-    setPostsData(newPosts);
+    if (postsData.length > 0) {
+      const newPosts = postsData.concat(portfolioPosts);
+      setPostsData(newPosts);
+    } else {
+      // console.log(portfolioPosts);
+      setPostsData(portfolioPosts);
+    }
     setPageInfo({ ...posts?.pageInfo });
+    setSectorLoading(false);
   };
 
   const [fetchPosts, { loading }] = useLazyQuery(GET_PORTFOLIO_POSTS, {
     notifyOnNetworkStatusChange: true,
+    fetchPolicy: 'network-only', // caching이 되지 않도록 매번 fetching
     onCompleted: (data) => {
+      //console.log(data);
       setPosts(data?.posts ?? []);
     },
     onError: (error: ApolloError) => {
@@ -51,10 +65,40 @@ const LoadMorePortfolio = ({ posts, pages, openModal }: Props) => {
     },
   });
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    // console.log(e);
+    if (e.key === 'Enter') {
+      getSectorItems();
+    }
+  };
+
+  const getSectorItems = (sectorId?: number | undefined) => {
+    setSectorLoading(true);
+    setPostsData([]);
+    if (sectorId !== undefined) {
+      setSelectedSectorId(sectorId);
+    }
+
+    let queryVariables = {
+      first: 9,
+      after: null,
+      search: searchValue,
+      categoryId: sectorId === 0 ? null : sectorId,
+    };
+
+    //console.log(queryVariables);
+
+    fetchPosts({
+      variables: queryVariables,
+    });
+  };
+
   const loadMoreItems = (endCursor: string | null | undefined) => {
     let queryVariables = {
       first: 9,
       after: endCursor,
+      search: searchValue,
+      categoryId: null,
     };
 
     // If its a search query then add the query in the query variables.
@@ -93,43 +137,136 @@ const LoadMorePortfolio = ({ posts, pages, openModal }: Props) => {
   }
 
   return (
-    <div className='w-full flex flex-col justify-center'>
-      <div className='w-full grid grid-cols-3 gap-x-2'>
-        {postsData.map(
-          (
-            { stage, logo, companyName, sector, companyDesc }: PostType,
-            index: number
-          ) => {
-            return (
-              <PortfolioCard
-                key={index}
-                stage={stage}
-                logo={logo}
-                companyName={companyName}
-                sector={sector}
-                companyDesc={companyDesc}
-                index={index}
-                openModal={() => openModal(postsData, index)}
-              />
-            );
-          }
-        )}
+    <>
+      <div>
+        {categories?.map(({ categoryId, name }, index) => {
+          return (
+            <SectorCategoryButton
+              key={categoryId}
+              categoryId={categoryId}
+              name={name}
+              color='#6D7278'
+              textColor='#FEFEFED9'
+              bgHover='bg-black'
+              selectedSectorId={selectedSectorId}
+              getSectorItems={getSectorItems}
+            />
+          );
+        })}
       </div>
-      {hasNextPage ? (
-        <div className='w-full flex justify-center lg:my-10'>
-          {loading ? (
-            <LoadingButton />
-          ) : (
-            <button
-              className='w-full max-w-[362px] py-6 px-2 mt-5 mx-auto bg-black text-2xl text-center text-white'
-              onClick={() => loadMoreItems(endCursor)}
+      <div className='w-full mt-6 flex justify-end'>
+        <div className='flex flex-row relative'>
+          <div>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='13'
+              height='13'
+              fill='currentColor'
+              className='bi bi-search absolute right-[120px] bottom-4 text-[#747474]'
+              viewBox='0 0 16 16'
             >
-              더보기
-            </button>
-          )}
+              <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
+            </svg>
+          </div>
+          <input
+            className='w-full max-w-[320px] px-4 py-2 border-[1px] border-[#0000001A]'
+            type='text'
+            placeholder='기업명을 입력해주세요'
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyDown={(e) => handleKeyDown(e)}
+          />
+          <button
+            onClick={() => getSectorItems()}
+            className='ml-3 w-[135px] h-[46px] bg-black flex justify-center items-center text-white'
+          >
+            Search
+          </button>
         </div>
-      ) : null}
-    </div>
+      </div>
+      <div className='w-full flex flex-col justify-center'>
+        {!sectorLoading ? (
+          <div>
+            {postsData.length > 0 ? (
+              <div className='w-full grid grid-cols-3 gap-x-2'>
+                {postsData.map(
+                  (
+                    { stage, logo, companyName, sector, companyDesc }: PostType,
+                    index: number
+                  ) => {
+                    return (
+                      <PortfolioCard
+                        key={index}
+                        stage={stage}
+                        logo={logo}
+                        companyName={companyName}
+                        sector={sector}
+                        companyDesc={companyDesc}
+                        index={index}
+                        openModal={() => openModal(postsData, index)}
+                      />
+                    );
+                  }
+                )}
+              </div>
+            ) : (
+              <div className='mt-4 h-[455px] border-[1px] border-[#0000001A] flex justify-center items-center'>
+                <div>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='20'
+                    height='20'
+                    fill='currentColor'
+                    className='bi bi-exclamation-triangle-fill'
+                    viewBox='0 0 16 16'
+                  >
+                    <path d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
+                  </svg>
+                </div>
+                <div className='text-[22px] text-[#3D3D3D] ml-4'>
+                  조건에 맞는 업체가 없습니다
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className='mt-4 h-[455px] border-[1px] border-[#0000001A] flex justify-center items-center'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='100px'
+              height='100px'
+              viewBox='0 0 100 100'
+            >
+              <path d='M 50,50 L 33,60.5 a 20 20 -210 1 1 34,0 z' fill='#000'>
+                <animateTransform
+                  attributeName='transform'
+                  type='rotate'
+                  from='0 50 50'
+                  to='360 50 50'
+                  dur='1.2s'
+                  repeatCount='indefinite'
+                />
+              </path>
+              <circle cx='50' cy='50' r='16' fill='#fff'></circle>
+            </svg>
+          </div>
+        )}
+
+        {!sectorLoading && hasNextPage ? (
+          <div className='w-full flex justify-center lg:my-10'>
+            {loading ? (
+              <LoadingButton />
+            ) : (
+              <button
+                className='w-full max-w-[362px] py-6 px-2 mt-5 mx-auto bg-black text-2xl text-center text-white'
+                onClick={() => loadMoreItems(endCursor)}
+              >
+                더보기
+              </button>
+            )}
+          </div>
+        ) : null}
+      </div>
+    </>
   );
 };
 

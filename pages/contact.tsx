@@ -57,7 +57,7 @@ const Contact = () => {
         <div className='mt-7 mb-2 text-base text-[#333333] font-semibold'>
           산업기술 분야를 선택해주세요
         </div>
-        <div className='w-full'>
+        {/* <div className='w-full'>
           {contactCategory
             .filter((category) => category !== 'All')
             .map((category, index) => {
@@ -70,7 +70,7 @@ const Contact = () => {
                 />
               );
             })}
-        </div>
+        </div> */}
         <div className='mt-12'>
           <ContactFormHeader
             title='세부 내용'

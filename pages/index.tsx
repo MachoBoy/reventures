@@ -4,6 +4,7 @@ import Home from './home';
 import { PortfolioType, PortfolioProps } from '../data/portfolio-data';
 import { client } from '../lib/apollo';
 import { gql } from '@apollo/client';
+import { GET_PORTFOLIO_SLIDER } from '../lib/queries/portfolio/get-portfolio-slider';
 
 const Main: NextPage<PortfolioProps> = ({ portfolioPosts }) => {
   // console.log(portfolioPosts);
@@ -19,29 +20,8 @@ const Main: NextPage<PortfolioProps> = ({ portfolioPosts }) => {
 };
 
 export async function getStaticProps() {
-  const GET_PORTFOLIO_POST = gql`
-    query AllPortfolioPosts {
-      posts {
-        nodes {
-          portfolio {
-            stage
-            # ceoName
-            # location
-            companyDesc
-            companyName
-            # foundDate
-            sector
-            logo {
-              sourceUrl
-            }
-          }
-        }
-      }
-    }
-  `;
-
   const response = await client.query({
-    query: GET_PORTFOLIO_POST,
+    query: GET_PORTFOLIO_SLIDER,
   });
 
   const portfolioPosts = response?.data?.posts?.nodes.map(

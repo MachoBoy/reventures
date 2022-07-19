@@ -3,16 +3,20 @@ import { client } from '../lib/apollo';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import BrandSlider from '../components/brand-slider/brandSlider';
 import BrandBox from '../components/brand-box/brandBox';
-import SectorCategoryButton from '../components/sector-category-button/SectorCategoryButton';
 import PortfolioCardDetail from '../components/portfolio-card-detail/portfolioCardDetail';
 import { portfolioData } from '../data/portfolio-data';
-import { contactCategory } from '../data/contact-data';
 import { GET_PORTFOLIO_POSTS } from '../lib/queries/portfolio/get-portfolio';
+import { GET_PORTFOLIO_CATEGORIES } from '../lib/queries/portfolio/get-portfolio-categories';
 import { PortfolioProps, PortfolioType } from '../data/portfolio-data';
 import LoadMorePortfolio from '../components/load-more-portfolio/load-more-portfolio';
 
-const Portfolio = ({ portfolioPosts, pageInfo }: PortfolioProps) => {
-  // console.log(pageInfo);
+const Portfolio = ({
+  portfolioPosts,
+  pageInfo,
+  categories,
+}: PortfolioProps) => {
+  // console.log(portfolioPosts);
+  console.log(categories);
   const [isModalOpen, setModalOpen] = useState(false);
   const [activePost, setActivePost] = useState({
     stage: '',
@@ -28,8 +32,6 @@ const Portfolio = ({ portfolioPosts, pageInfo }: PortfolioProps) => {
     sector: '',
     __typename: '',
   });
-  const [selectedSector, setSelectedSector] = useState('All');
-  const [isLoading, setIsLoading] = useState(false);
 
   const openModal = (postsData: [], index: number) => {
     //const post = portfolioPosts[index];
@@ -59,48 +61,12 @@ const Portfolio = ({ portfolioPosts, pageInfo }: PortfolioProps) => {
         <div className='mt-14 uppercase text-xl text-black font-semibold'>
           sector
         </div>
-        <div>
-          {contactCategory.map((category, index) => {
-            return (
-              <SectorCategoryButton
-                key={index}
-                name={category}
-                color='#6D7278'
-                textColor='#FEFEFED9'
-                bgHover='bg-black'
-                selectedSector={selectedSector}
-              />
-            );
-          })}
-        </div>
-        <div className='w-full mt-6 flex justify-end'>
-          <div className='flex flex-row relative'>
-            <i>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='13'
-                height='13'
-                fill='currentColor'
-                className='bi bi-search absolute right-[120px] bottom-4 text-[#747474]'
-                viewBox='0 0 16 16'
-              >
-                <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
-              </svg>
-            </i>
-            <input
-              className='w-full max-w-[320px] px-4 py-2 border-[1px] border-[#0000001A]'
-              type='text'
-              placeholder='기업명을 입력해주세요'
-            />
-            <button className='ml-3 w-[135px] h-[46px] bg-black flex justify-center items-center text-white'>
-              Search
-            </button>
-          </div>
-        </div>
+
         <LoadMorePortfolio
           posts={portfolioPosts}
           pages={pageInfo}
           openModal={openModal}
+          categories={categories}
         />
       </div>
       {isModalOpen ? (
@@ -128,6 +94,20 @@ export async function getStaticProps() {
     },
   });
 
+  const categoriesResponse = await client.query({
+    query: GET_PORTFOLIO_CATEGORIES,
+  });
+
+  const categories = categoriesResponse?.data?.categories?.nodes
+    ?.concat({
+      categoryId: 0,
+      name: 'All',
+    })
+    .filter((category: any) => category.name !== 'portfolio')
+    .sort((a: any, b: any) => {
+      return a.categoryId - b.categoryId;
+    });
+
   const portfolioPosts = response?.data?.posts?.nodes.map(
     (post: PortfolioType) => {
       return post.portfolio;
@@ -140,6 +120,7 @@ export async function getStaticProps() {
     props: {
       portfolioPosts,
       pageInfo,
+      categories,
     },
   };
 }
