@@ -40,7 +40,7 @@ const Footer = () => {
         <div className='w-full max-w-[1142px] text-[#6D7278] flex justify-between'>
           <div className=''>
             Connect with us&nbsp;
-            <Link href='ddd'>
+            <Link href='mailto: reventuresad@reventures.co.kr'>
               <a className='underline'>Email</a>
             </Link>
           </div>

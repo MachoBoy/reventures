@@ -67,7 +67,7 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           <div className='relative w-[430px] h-[562px] z-20'>
             <Image src='/img_home.png' layout='fill' alt='airplain' />
           </div>
-          <div className='mt-8 w-full flex justify-end pr-12'>
+          <div className='mt-8 w-full flex justify-end pr-12 hover:pr-9 transition-all'>
             <Link href='/about'>
               <a className='relative block w-[171px] h-[42px] text-right text-[#6D7278] text-[27px]'>
                 <Image layout='fill' alt='Read More' src='/btn_readmore.png' />
@@ -210,7 +210,7 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           리벤처스는 항상 열려 있습니다.
         </div>
         <Link href='/contact'>
-          <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl text-black font-bold hover:bg-black hover:text-white transition-all'>
+          <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl text-black font-bold border-2 border-white border-solid hover:bg-black hover:text-white transition-all'>
             지원하기
           </a>
         </Link>

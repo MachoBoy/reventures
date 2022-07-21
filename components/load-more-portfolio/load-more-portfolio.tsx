@@ -260,7 +260,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
               <LoadingButton />
             ) : (
               <button
-                className='w-full max-w-[362px] py-6 px-2 mt-5 mx-auto bg-black text-2xl text-center text-white'
+                className='w-full max-w-[362px] py-6 px-2 mt-5 mx-auto text-2xl text-center text-white bg-black hover:bg-[#6D7278] transition-colors'
                 onClick={() => loadMoreItems(endCursor)}
               >
                 더보기

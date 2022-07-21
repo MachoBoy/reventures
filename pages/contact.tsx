@@ -284,7 +284,7 @@ const Contact = ({ categories }: any) => {
                   type='submit'
                   onClick={handleInput}
                   value='파일업로드'
-                  className='ml-3 inline-block h-[56px] px-7 py-3 bg-[#000000] text-white cursor-pointer'
+                  className='ml-3 inline-block h-[56px] px-7 py-3 text-white cursor-pointer bg-black hover:bg-[#6D7278] transition-colors'
                 />
               ) : (
                 <div className='ml-9 w-[125px] h-[56px] px-7 py-3 bg-[#000000] text-white flex justify-center items-center'>
@@ -335,7 +335,7 @@ const Contact = ({ categories }: any) => {
             {!sendEmailLoading ? (
               <input
                 type='submit'
-                className='mx-auto mt-16 w-[362px] h-[77px] flex justify-center items-center bg-black text-white text-2xl cursor-pointer'
+                className='mx-auto mt-16 w-[362px] h-[77px] flex justify-center items-center text-white text-2xl cursor-pointer bg-black hover:bg-[#6D7278] transition-colors'
                 value='제출하기'
               />
             ) : (

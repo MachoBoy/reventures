@@ -140,7 +140,7 @@ const About = () => {
                 Own-Onership-Partner가 되고자 합니다.
               </p>
               <Link href='https://reventures-vc.com/wp-content/uploads/2022/07/logo.zip'>
-                <a className='mt-[42px] bg-black w-[362px] h-[77px] text-2xl text-white flex justify-center items-center'>
+                <a className='mt-[42px] w-[362px] h-[77px] text-2xl text-white flex justify-center items-center bg-black hover:bg-[#6D7278] transition-colors'>
                   CI 다운로드
                 </a>
               </Link>
