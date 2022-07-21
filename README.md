@@ -12,5 +12,5 @@ DEV stack
 - formidable
 - framer-motion
 
-Designed by: Teddy Choi
-Developed by: Jiwon Park
+- Designed by: Teddy Choi
+- Developed by: Jiwon Park
