@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         video.onended = () => {
           videoWrapper[0].style.opacity = '0';
           setTimeout(() => {
-            videoWrapper[0].style.display = ' none';
+            videoWrapper[0].style.display = 'none';
           }, 1000);
         };
       }
