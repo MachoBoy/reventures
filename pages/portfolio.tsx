@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState } from 'react';
 import { client } from '../lib/apollo';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
@@ -45,6 +46,10 @@ const Portfolio = ({
 
   return (
     <div className='w-full'>
+      <Head>
+        <title>RE:VENTURES - Portfolio</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <div className='h-[80px] bg-portfolio-top bg-center bg-no-repeat'></div>
       <div className='w-full max-w-[1140px] mx-auto pt-14 pb-24'>
         <MainSectionTitle title='ATTRACTING INVESTMENT' isDark={false} />

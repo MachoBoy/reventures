@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import BrandSlider from '../components/brand-slider/brandSlider';
 import TipsApplyHow from '../components/tips-apply-how/tipsApplyHow';
@@ -9,6 +10,10 @@ import { portfolioData } from '../data/portfolio-data';
 const Tips = () => {
   return (
     <div className='w-full max-w-[1920px] mx-auto'>
+      <Head>
+        <title>RE:VENTURES - TIPS</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <div className='w-full h-[390px] bg-tips-top flex flex-col justify-center items-center'>
         <div className='text-white text-7xl font-semibold'>TIPS</div>
         <div className='mt-4 text-white text-4xl'>

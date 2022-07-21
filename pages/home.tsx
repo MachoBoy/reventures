@@ -10,7 +10,7 @@ import { aboutData, investCountData } from '../data/home-data';
 import { PortfolioProps } from '../data/portfolio-data';
 
 const Home = ({ portfolioPosts }: PortfolioProps) => {
-  console.log(portfolioPosts);
+  // console.log(portfolioPosts);
   return (
     <div className='w-full'>
       <div className='pt-[320px] pl-[358px] relative top-section h-[867px] bg-black'>
@@ -208,8 +208,8 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         <div className='text-gray-eee text-xl'>
           리벤처스는 항상 열려 있습니다.
         </div>
-        <Link href='/'>
-          <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl font-bold'>
+        <Link href='/contact'>
+          <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl text-black font-bold hover:bg-black hover:text-white transition-all'>
             지원하기
           </a>
         </Link>

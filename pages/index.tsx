@@ -11,7 +11,7 @@ const Main: NextPage<PortfolioProps> = ({ portfolioPosts }) => {
   return (
     <div className='w-full'>
       <Head>
-        <title>Re:ventures</title>
+        <title>RE:VENTURES - Home</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
       <Home portfolioPosts={portfolioPosts} />
