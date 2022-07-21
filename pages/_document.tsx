@@ -6,6 +6,10 @@ export default function Document() {
       <Head>
         {/* HTML Meta Tags */}
         <meta
+          name='viewport'
+          content='initial-scale=1.0, width=device-width maximum-scale=1.0, shrink-to-fit=no, user-scalable=0'
+        />
+        <meta
           name='description'
           content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
         />
@@ -55,7 +59,7 @@ export default function Document() {
         />
       </Head>
       <body>
-        <div className='video-wrapper fixed w-full h-screen z-[100] bg-black'>
+        <div className='video-wrapper fixed w-full h-screen z-[100] bg-black sm:hidden'>
           <video
             id='globalvideo'
             autoPlay

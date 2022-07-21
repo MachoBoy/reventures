@@ -50,7 +50,10 @@ const Portfolio = ({
     <div className='w-full'>
       <Head>
         <title>RE:VENTURES - Portfolio</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta
+          name='viewport'
+          content='initial-scale=1.0, width=device-width maximum-scale=1.0, shrink-to-fit=no, user-scalable=0'
+        />
       </Head>
       <div className='h-[80px] bg-portfolio-top bg-center bg-no-repeat'></div>
       <div className='w-full max-w-[1140px] mx-auto pt-14 pb-24'>

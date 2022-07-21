@@ -173,7 +173,10 @@ const Contact = ({ categories }: any) => {
     <div className='w-full max-w-[1920px] mx-auto'>
       <Head>
         <title>RE:VENTURES - Contact</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta
+          name='viewport'
+          content='initial-scale=1.0, width=device-width maximum-scale=1.0, shrink-to-fit=no, user-scalable=0'
+        />
       </Head>
       <div className='w-full h-[390px] bg-contact-top flex flex-col justify-center items-center'>
         <div className='text-white text-7xl font-semibold'>Contact</div>

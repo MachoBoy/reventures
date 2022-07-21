@@ -8,7 +8,10 @@ const About = () => {
     <div className='w-full max-w-[1920px] mx-auto'>
       <Head>
         <title>RE:VENTURES - About</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta
+          name='viewport'
+          content='initial-scale=1.0, width=device-width maximum-scale=1.0, shrink-to-fit=no, user-scalable=0'
+        />
       </Head>
       <div className='about-top h-[479px] bg-about-top bg-center bg-no-repeat flex justify-center items-center'>
         <div className='flex flex-row justify-between min-w-[1000px] mx-auto'>
