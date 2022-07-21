@@ -16,7 +16,7 @@ const Portfolio = ({
   categories,
 }: PortfolioProps) => {
   // console.log(portfolioPosts);
-  console.log(categories);
+  //console.log(categories);
   const [isModalOpen, setModalOpen] = useState(false);
   const [activePost, setActivePost] = useState({
     stage: '',

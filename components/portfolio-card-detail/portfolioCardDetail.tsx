@@ -62,9 +62,11 @@ const PortfolioCardDetail = ({ closeModal, activePost }: Props) => {
                 {stage}
               </div>
             ) : null}
-            <div className='inline-block px-2 py-1 h-[30px] bg-[#6D7278] text-[#FEFEFED9]'>
-              {sector}
-            </div>
+            {sector ? (
+              <div className='inline-block px-2 py-1 h-[30px] bg-[#6D7278] text-[#FEFEFED9]'>
+                {sector}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

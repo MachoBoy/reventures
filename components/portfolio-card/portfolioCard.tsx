@@ -55,9 +55,11 @@ const PortfolioCard = ({
         )}
         <div className='mt-12 divider w-full h-[1px] bg-[#979797] bg-opacity-40'></div>
         <h5 className='mt-8 text-[#333333] text-xl'>{companyName}</h5>
-        <div className='mt-5 inline-block bg-[#6D7278] py-[6px] px-[10px] text-[#FEFEFED9] text-sm'>
-          {sector}
-        </div>
+        {sector ? (
+          <div className='mt-5 inline-block bg-[#6D7278] py-[6px] px-[10px] text-[#FEFEFED9] text-sm'>
+            {sector}
+          </div>
+        ) : null}
         <p className='mt-5 text-base text-[#666666]'>{companyDesc}</p>
       </div>
     </div>

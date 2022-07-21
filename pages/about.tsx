@@ -134,7 +134,7 @@ const About = () => {
                 파트너로서 멀리서 응원이 아닌 함께 성공을 향해 달리는
                 Own-Onership-Partner가 되고자 합니다.
               </p>
-              <Link href='/'>
+              <Link href='https://reventures-vc.com/wp-content/uploads/2022/07/logo.zip'>
                 <a className='mt-[42px] bg-black w-[362px] h-[77px] text-2xl text-white flex justify-center items-center'>
                   CI 다운로드
                 </a>

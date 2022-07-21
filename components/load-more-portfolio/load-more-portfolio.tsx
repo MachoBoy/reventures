@@ -147,7 +147,6 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
               name={name}
               color='#6D7278'
               textColor='#FEFEFED9'
-              bgHover='bg-black'
               selectedSectorId={selectedSectorId}
               getSectorItems={getSectorItems}
             />
@@ -209,7 +208,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
                 )}
               </div>
             ) : (
-              <div className='mt-4 h-[455px] border-[1px] border-[#0000001A] flex justify-center items-center'>
+              <div className='mt-4 h-[455px] flex justify-center items-center'>
                 <div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -229,7 +228,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
             )}
           </div>
         ) : (
-          <div className='mt-4 h-[455px] border-[1px] border-[#0000001A] flex justify-center items-center'>
+          <div className='mt-4 h-[455px] flex justify-center items-center'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='100px'

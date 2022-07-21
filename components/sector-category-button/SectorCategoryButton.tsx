@@ -3,7 +3,6 @@ interface Props {
   categoryId: number | null;
   color: string;
   textColor: string;
-  bgHover?: string;
   selectedSectorId: number;
   getSectorItems: Function;
 }
@@ -12,7 +11,6 @@ const SectorCategoryButton = ({
   name,
   color,
   textColor,
-  bgHover,
   selectedSectorId,
   categoryId,
   getSectorItems,
@@ -23,7 +21,7 @@ const SectorCategoryButton = ({
       onClick={() => getSectorItems(categoryId)}
       className={`inline-block align-middle mt-3 px-8 py-3 h-11 mr-4 ${
         selectedSectorId === categoryId ? 'bg-black' : `bg-[${color}]`
-      } text-[${textColor}]`}
+      } text-[${textColor}] hover:bg-black transition-all`}
     >
       {name}
     </button>
