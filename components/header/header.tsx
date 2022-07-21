@@ -21,14 +21,14 @@ const Header = () => {
   //console.log(router);
   return (
     <div
-      className={`header w-full h-[80px] fixed top-0 left-0 m-auto flex justify-center items-center z-50 ${
-        scrollPosition > 0 ? 'bg-black' : 'bg-transparent'
-      }`}
+      className={`header w-full fixed top-0 left-0 m-auto flex justify-center items-center z-50 ${
+        scrollPosition > 0 ? 'bg-black  h-[60px]' : 'bg-transparent h-[80px]'
+      } transition-[height]`}
     >
-      <div className='w-auto min-w-[1000px] m-auto flex justify-between'>
+      <div className='w-auto min-w-[1140px] m-auto flex justify-between'>
         <div className='header-logo'>
           <Link href='/'>
-            <a>
+            <a className='mt-1 block'>
               <Image
                 layout='fixed'
                 width={70}
@@ -39,8 +39,8 @@ const Header = () => {
             </a>
           </Link>
         </div>
-        <nav className='menu-container flex w-full max-w-[670px]'>
-          <ul className='menu w-full flex justify-evenly items-center'>
+        <nav className='menu-container flex w-full max-w-[600px]'>
+          <ul className='menu w-full flex justify-between items-center'>
             {navData.map(({ title, link, children }, index) => {
               return (
                 <li

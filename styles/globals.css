@@ -7,10 +7,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* slick dot styling */
 .slick-dots .slick-active div {
   @apply bg-black w-[14px] h-[14px] -mt-[2px];
 }
 
+/* intro video opacity */
 .video-wrapper {
   opacity: 1;
   transition: 1s;

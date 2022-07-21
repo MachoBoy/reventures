@@ -25,6 +25,11 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         <div className='absolute -left-28 rotate-90 top-1/2'>
           <AllRightsReserve />
         </div>
+        <div className='absolute right-7 top-1/6 -mt-6'>
+          <div className='w-[24px] h-[302px]'>
+            <Image src='/img_scroll.png' layout='fill' alt='scroll' />
+          </div>
+        </div>
         <div className='relative'>
           <div className='flex flex-row items-center'>
             <div className='w-[5px] h-[93px] bg-[#64676A]'></div>
@@ -60,19 +65,15 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         </div>
         <div className='about-right relative ml-20'>
           <div className='relative w-[430px] h-[562px] z-20'>
-            <Image
-              src='/img_home.png'
-              layout='responsive'
-              width={409}
-              height={562}
-              alt='airplain'
-            />
+            <Image src='/img_home.png' layout='fill' alt='airplain' />
           </div>
-          <Link href='/about'>
-            <a className='block mt-20 w-full text-right text-[#6D7278] text-[27px]'>
-              Read More &#10132;
-            </a>
-          </Link>
+          <div className='mt-8 w-full flex justify-end pr-12'>
+            <Link href='/about'>
+              <a className='relative block w-[171px] h-[42px] text-right text-[#6D7278] text-[27px]'>
+                <Image layout='fill' alt='Read More' src='/btn_readmore.png' />
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
       <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat'>

@@ -8,15 +8,16 @@ interface Props {
 
 const BrandSlider = ({ children }: Props) => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 6,
-    centerPadding: '0',
-    centerMode: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    customPaging: () => (
+      <div className='w-[10px] h-[10px] rounded-full bg-[#7C7C7C92] mx-auto'></div>
+    ),
   };
   return <Slider {...settings}>{children}</Slider>;
 };

@@ -24,12 +24,12 @@ const Tips = () => {
         <div className='w-full'>
           <MainSectionTitle title='tips program' isDark={false} />
           <div className='flex flex-row mt-14'>
-            <div>
+            <div className='block w-[407px] h-[236px] relative'>
               <Image
-                width={407}
-                height={236}
+                layout='fill'
                 src='/img_tips1.png'
                 alt='tips_stair'
+                objectFit='contain'
               />
             </div>
             <div className='flex flex-col max-w-[700px]'>
@@ -54,11 +54,10 @@ const Tips = () => {
               </p>
             </div>
           </div>
-          <div className='w-full mt-10'>
+          <div className='relative w-full h-[466px] mt-10'>
             <Image
-              layout='responsive'
-              width={1146}
-              height={466}
+              layout='fill'
+              objectFit='contain'
               src='/img_table.png'
               alt='tips-table'
             />
@@ -90,11 +89,10 @@ const Tips = () => {
               );
             })}
           </div>
-          <div className='mt-10'>
+          <div className='mt-10 w-full h-[338px] relative'>
             <Image
-              layout='responsive'
-              width={1142}
-              height={338}
+              layout='fill'
+              objectFit='contain'
               src='/img_tips2.png'
               alt='collabo'
             />

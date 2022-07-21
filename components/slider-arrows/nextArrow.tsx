@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
@@ -5,7 +7,9 @@ const NextArrow = (props: any) => {
       className='absolute -top-16 right-0 text-2xl text-[#00000087]'
       onClick={onClick}
     >
-      &#5171;
+      <div className='relative w-[24px] h-[23px]'>
+        <Image layout='fill' src='/ico_right.png' alt='right' />
+      </div>
     </button>
   );
 };

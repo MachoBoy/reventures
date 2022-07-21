@@ -284,7 +284,7 @@ const Contact = ({ categories }: any) => {
                   type='submit'
                   onClick={handleInput}
                   value='파일업로드'
-                  className='ml-9 inline-block h-[56px] px-7 py-3 bg-[#000000] text-white cursor-pointer'
+                  className='ml-3 inline-block h-[56px] px-7 py-3 bg-[#000000] text-white cursor-pointer'
                 />
               ) : (
                 <div className='ml-9 w-[125px] h-[56px] px-7 py-3 bg-[#000000] text-white flex justify-center items-center'>

@@ -4,6 +4,43 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta
+          name='description'
+          content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
+        />
+        <meta property='og:type' content='website' data-dynamic='true' />
+        <meta property='og:title' content='리벤처스' data-dynamic='true' />
+        <meta
+          property='og:description'
+          content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
+          data-dynamic='true'
+        />
+        <meta
+          property='og:url'
+          content='https://reventures.co.kr'
+          data-dynamic='true'
+        />
+        <meta
+          property='twitter:card'
+          content='summary_large_image'
+          data-dynamic='true'
+        />
+        <meta
+          property='twitter:domain'
+          content='reventures.co.kr'
+          data-dynamic='true'
+        />
+        <meta
+          property='twitter:url'
+          content='https://reventures.co.kr'
+          data-dynamic='true'
+        />
+        <meta property='twitter:title' content='리벤처스' data-dynamic='true' />
+        <meta
+          property='twitter:description'
+          content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
+          data-dynamic='true'
+        />
         <link
           rel='stylesheet'
           as='style'
@@ -28,7 +65,7 @@ export default function Document() {
             id='globalvideo'
             autoPlay
             muted
-            className='w-full h-full absolute left-0 -top-14'
+            className='w-full h-full absolute inset-0'
           >
             <source src='intro.mp4' type='video/mp4' />
           </video>

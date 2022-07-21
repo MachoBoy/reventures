@@ -3,6 +3,7 @@ export interface PortfolioProps {
   portfolioPosts: PostType[];
   pageInfo?: PageInfoType;
   categories?: CategoryType[];
+  sliderPosts?: PostType[];
 }
 // 포트폴리오 타입
 export interface PortfolioType {

@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Home from './home';
 import { PortfolioType, PortfolioProps } from '../data/portfolio-data';
 import { client } from '../lib/apollo';
-import { gql } from '@apollo/client';
 import { GET_PORTFOLIO_SLIDER } from '../lib/queries/portfolio/get-portfolio-slider';
 
 const Main: NextPage<PortfolioProps> = ({ portfolioPosts }) => {

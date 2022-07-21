@@ -193,16 +193,20 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
                     index: number
                   ) => {
                     return (
-                      <PortfolioCard
+                      <div
                         key={index}
-                        stage={stage}
-                        logo={logo}
-                        companyName={companyName}
-                        sector={sector}
-                        companyDesc={companyDesc}
-                        index={index}
-                        openModal={() => openModal(postsData, index)}
-                      />
+                        className='hover:-m-4 transition-[margin]'
+                      >
+                        <PortfolioCard
+                          stage={stage}
+                          logo={logo}
+                          companyName={companyName}
+                          sector={sector}
+                          companyDesc={companyDesc}
+                          index={index}
+                          openModal={() => openModal(postsData, index)}
+                        />
+                      </div>
                     );
                   }
                 )}
