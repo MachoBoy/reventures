@@ -64,7 +64,7 @@ const Tips = () => {
             />
           </div>
         </div>
-        <div className='mt-24 w-full'>
+        {/* <div className='mt-24 w-full'>
           <MainSectionTitle title='tips 보육기업' isDark={false} />
           <div className='mt-7'>
             <BrandSlider>
@@ -73,7 +73,7 @@ const Tips = () => {
               })}
             </BrandSlider>
           </div>
-        </div>
+        </div> */}
 
         <div className='mt-24 w-full'>
           <MainSectionTitle title='tips 지원하기' isDark={false} />
