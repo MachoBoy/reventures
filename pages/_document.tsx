@@ -4,42 +4,37 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        {/* HTML Meta Tags */}
         <meta
           name='description'
           content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
         />
-        <meta property='og:type' content='website' data-dynamic='true' />
-        <meta property='og:title' content='리벤처스' data-dynamic='true' />
+
+        {/* Facebook Meta Tags */}
+        <meta property='og:url' content='https://reventures.vercel.app/' />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='RE:VENTURES - 리벤처스' />
         <meta
           property='og:description'
           content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
-          data-dynamic='true'
         />
         <meta
-          property='og:url'
-          content='https://reventures.co.kr'
-          data-dynamic='true'
+          property='og:image'
+          content='https://reventures-vc.com/wp-content/uploads/2022/06/대지-1@3x-1-e1654143103961.png'
         />
+
+        {/* Twitter Meta Tags */}
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:domain' content='reventures.vercel.app' />
+        <meta property='twitter:url' content='https://reventures.vercel.app/' />
+        <meta name='twitter:title' content='RE:VENTURES - 리벤처스' />
         <meta
-          property='twitter:card'
-          content='summary_large_image'
-          data-dynamic='true'
-        />
-        <meta
-          property='twitter:domain'
-          content='reventures.co.kr'
-          data-dynamic='true'
-        />
-        <meta
-          property='twitter:url'
-          content='https://reventures.co.kr'
-          data-dynamic='true'
-        />
-        <meta property='twitter:title' content='리벤처스' data-dynamic='true' />
-        <meta
-          property='twitter:description'
+          name='twitter:description'
           content='리벤처스는 기업가 정신과 도덕성을 갖춘 경영진이‌우수한 기술력을 바탕으로 성장 잠재력이 큰 기업에 지원하여‌ 초기벤처기업과 함께 성장하는 기술기반 액셀러레이터입니다.'
-          data-dynamic='true'
+        />
+        <meta
+          name='twitter:image'
+          content='https://reventures-vc.com/wp-content/uploads/2022/06/대지-1@3x-1-e1654143103961.png'
         />
         <link
           rel='stylesheet'
