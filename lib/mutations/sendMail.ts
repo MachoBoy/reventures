@@ -29,8 +29,8 @@ export async function sendMail(
   body: any,
   mutationId = 'contact'
 ) {
-  const fromAddress = 'jiiwon0@gmail.com';
-  const toAddress = 'jiiwon0@gmail.com';
+  const fromAddress = 'apply@reventures.co.kr';
+  const toAddress = 'apply@reventures.co.kr';
   const data = await fetchAPI(
     `
 		mutation SendEmail($input: SendEmailInput!) {
