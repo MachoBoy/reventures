@@ -16,28 +16,28 @@ const Contact = ({ categories }: any) => {
   const [fileUrl, setFileUrl] = useState('');
   const methods = useForm({
     defaultValues: {
-      // name: '지원',
-      // companyName: 'abcd',
-      // phoneNumber: '7778-34390--234',
-      // email: '23432@dfasfdasf.com',
-      // itemSummary:
-      //   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
-      // issue:
-      //   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
-      // issueHow:
-      //   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
-      // addtionalInfo:
-      //   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
-      // agreement: true,
-      name: '',
-      companyName: '',
-      phoneNumber: '',
-      email: '',
-      itemSummary: '',
-      issue: '',
-      issueHow: '',
-      addtionalInfo: '',
-      agreement: false,
+      name: '테스트',
+      companyName: '테스트',
+      phoneNumber: '011-1111-1121',
+      email: 'test@test.com',
+      itemSummary:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
+      issue:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
+      issueHow:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
+      addtionalInfo:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu',
+      agreement: true,
+      // name: '',
+      // companyName: '',
+      // phoneNumber: '',
+      // email: '',
+      // itemSummary: '',
+      // issue: '',
+      // issueHow: '',
+      // addtionalInfo: '',
+      // agreement: false,
     },
   });
 
@@ -60,8 +60,8 @@ const Contact = ({ categories }: any) => {
     /* Send request to our api route */
     const response = await fetch(
       //'http://cmsreventures.local/wp-json/wp/v2/media',
-      'https://reventures-vc.com/wp-json/wp/v2/media',
-
+      `${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/media`,
+      //'/api/upload',
       {
         method: 'POST',
         headers: {
@@ -86,6 +86,7 @@ const Contact = ({ categories }: any) => {
 
     if (response.source_url) {
       // console.log('소스유알엘');
+      alert('파일 업로드가 완료되었습니다');
       setFileUrl(response.source_url);
     }
 
@@ -160,7 +161,7 @@ const Contact = ({ categories }: any) => {
 
     if (response.sent) {
       // email was sent successfully!
-      alert('메일을 성공적으로 보냈습니다');
+      alert('메일을 성공적으로 보냈습니다. 감사합니다.');
       // router.push('/contact/thanks');
     }
     setSendEmailLoading(false);
@@ -168,7 +169,6 @@ const Contact = ({ categories }: any) => {
   const onError = (errors: any) => {
     console.log(errors);
   };
-
   return (
     <div className='w-full max-w-[1920px] mx-auto'>
       <Head>
