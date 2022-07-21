@@ -22,6 +22,15 @@ module.exports = {
     },
 
     extend: {
+      keyframes: {
+        opacity: {
+          '100%': { opacity: '0.5' },
+          '0%': { opacity: '1' },
+        },
+      },
+      animation: {
+        opacity: 'opacity 5s',
+      },
       boxShadow: {
         portfolio: '0px 10px 29px #00000027',
       },

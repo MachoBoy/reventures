@@ -23,6 +23,16 @@ export default function Document() {
         />
       </Head>
       <body>
+        <div className='video-wrapper fixed w-full h-screen z-[100] bg-black'>
+          <video
+            id='globalvideo'
+            autoPlay
+            muted
+            className='w-full h-full absolute left-0 -top-14'
+          >
+            <source src='intro.mp4' type='video/mp4' />
+          </video>
+        </div>
         <Main />
         <NextScript />
       </body>

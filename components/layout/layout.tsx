@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
@@ -8,9 +8,14 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // useLayoutEffect(() => {
+  //   console.log(vidRef);
+  // });
 
   if (!mounted) return null;
   return (
