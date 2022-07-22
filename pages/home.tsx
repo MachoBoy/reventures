@@ -27,7 +27,20 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         </div>
         <div className='absolute right-7 top-1/6 -mt-6'>
           <div className='w-[24px] h-[302px]'>
-            <Image src='/img_scroll.png' layout='fill' alt='scroll' />
+            <Image
+              src='/img_scroll.png'
+              layout='fill'
+              alt='scroll'
+              objectFit='contain'
+            />
+          </div>
+          <div className='absolute w-8 h-8 bottom-[68px] -left-1'>
+            <Image
+              src='/mouse.svg'
+              layout='fill'
+              alt='scroll'
+              objectFit='contain'
+            />
           </div>
         </div>
         <div className='relative'>
