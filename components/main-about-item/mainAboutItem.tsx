@@ -21,7 +21,7 @@ const MainAboutItem = ({ icon, title, desc }: Props) => {
         <h6 className='text-gray-40 font-bold text-[26px] uppercase'>
           {title}
         </h6>
-        <p className='max-w-[406px] text-gray-2e text-[26px] mt-[13.5px] leading-tight'>
+        <p className='max-w-[406px] text-gray-2e text-xl mt-[13.5px] leading-tight'>
           {desc}
         </p>
       </div>
