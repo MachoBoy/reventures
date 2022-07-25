@@ -25,11 +25,11 @@ const PortfolioCard = ({
   const router = useRouter();
   // console.log(router);
   return (
-    <div className='my-9 flex justify-center'>
+    <div className='my-9 flex justify-center sm:my-7'>
       <div
         className={`py-5 px-4 bg-white w-[363px] h-[455px] shadow-portfolio ${
           router.pathname === '/portfolio' ? 'cursor-pointer' : 'cursor-default'
-        } `}
+        } lg:w-[312px]`}
         onClick={() => openModal(index)}
       >
         {stage ? (

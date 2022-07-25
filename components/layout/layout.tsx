@@ -8,21 +8,30 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const [mounted, setMounted] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // useLayoutEffect(() => {
-  //   console.log(vidRef);
-  // });
+  const handleMobileNav = () => {
+    setMobileNavOpen(!mobileNavOpen);
+  };
 
   if (!mounted) return null;
   return (
     mounted && (
       <>
-        <Header />
-        <main className='w-full min-w-[1560px] max-w-[1920px] mx-auto overflow-hidden'>
+        <Header
+          mobileNavOpen={mobileNavOpen}
+          handleMobileNav={handleMobileNav}
+        />
+        <main
+          onClick={mobileNavOpen ? () => handleMobileNav() : () => {}}
+          className={`w-full max-w-[1920px] mx-auto overflow-hidden ${
+            mobileNavOpen ? 'blur-[2px]' : 'blur-none'
+          }`}
+        >
           {children}
         </main>
         <Footer />

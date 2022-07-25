@@ -20,7 +20,7 @@ const PortfolioCardDetail = ({ closeModal, activePost }: Props) => {
     sector,
   } = activePost;
   return (
-    <div className='relative px-20 py-14 bg-white'>
+    <div className='w-full max-w-[1060px] h-[535px] px-20 py-14 bg-white'>
       <div className='absolute w-full flex justify-end -left-10 top-8'>
         <button onClick={() => closeModal()}>
           <svg

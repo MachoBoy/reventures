@@ -18,8 +18,25 @@ const PortfolioSlider = ({ children }: Props) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     customPaging: () => (
-      <div className='w-[10px] h-[10px] rounded-full bg-[#7C7C7C92] mx-auto'></div>
+      <div className='w-[10px] h-[10px] rounded-full bg-[#7C7C7C92] mx-auto sm:w-[8px] sm:h-[8px]'></div>
     ),
+    responsive: [
+      {
+        breakpoint: 1191,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 639,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
   return <Slider {...settings}>{children}</Slider>;
 };
