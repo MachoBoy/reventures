@@ -169,30 +169,11 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
             <div className='mt-5 flex flex-row gap-7'>
               <div className='w-full'>
                 <div className='text-gray-eee text-xl font-bold'>
-                  서울 영등포구 여의대로 108 파크원타워1 4~5층
+                  서울 강남구 역삼로 165 해성빌딩 팁스타운S1 5층 D호실
                 </div>
                 <div className='mt-2 text-gray-eee text-lg mb-5'>
-                  108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
-                </div>
-                <Image
-                  width='558'
-                  height='522'
-                  alt='google-map'
-                  src='/img_map1.png'
-                />
-                {/* <Image
-                  width='558'
-                  height='522'
-                  alt='google-map'
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=37.525296,126.9193534&zoom=14&size=558x522&maptype=roadmap&key=${process.env.GOOGLE_MAP_KEY}`}
-                /> */}
-              </div>
-              <div className='w-full'>
-                <div className='text-gray-eee text-xl font-bold'>
-                  대전 유성구 궁동로 21 대전 팁스타운(TIPS TOWN)
-                </div>
-                <div className='mt-2 text-gray-eee text-lg mb-5'>
-                  21, Gungdong-ro, Yuseong-gu, Daejeon, Republic of Korea
+                  Tipstown S1 5F, 165 Yeoksam-ro, Gangnam-gu, Seoul Republic of
+                  Korea
                 </div>
                 <Image
                   width='558'
@@ -200,12 +181,21 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
                   alt='google-map'
                   src='/img_map2.png'
                 />
-                {/* <Image
+              </div>
+              <div className='w-full'>
+                <div className='text-gray-eee text-xl font-bold'>
+                  대전 유성구 대학로 99 충남대학교, 대전 팁스타운 506호
+                </div>
+                <div className='mt-2 text-gray-eee text-lg mb-5'>
+                  Chung-nam Univ, Tipstown 99, Daehak-ro, Yuseong-gu, Daejeon
+                  Republic of Korea
+                </div>
+                <Image
                   width='558'
                   height='522'
                   alt='google-map'
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=36.3631304,127.3447129&zoom=14&size=558x522&maptype=roadmap&key=${process.env.GOOGLE_MAP_KEY}`}
-                /> */}
+                  src='/img_map1.png'
+                />
               </div>
             </div>
           </div>

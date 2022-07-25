@@ -2,7 +2,7 @@ export const teamData = [
   {
     name: '김나경',
     position: '대표이사',
-    company: 'IBK Capital / Kosnet Technology Investment',
+    company: `IBK Capital\u000AKosnet Technology Investment`,
     active:
       '리벨리온, 와탭랩스, 디엠서플라이, 알씨테크, JH엔지니어링, 이너보틀, 네오리젠바이오텍',
     exit: '와이엠텍, 세경하이테크, 휴이노, 가드넥, 지디케이화장품',
@@ -10,7 +10,7 @@ export const teamData = [
   {
     name: '이동우',
     position: '이사 / 변리사',
-    company: '변리사 / 법무법인 세종/ 월드클래스특허법률사무소',
+    company: '변리사 \u000A법무법인 세종\u000A월드클래스특허법률사무소',
     active: '',
     exit: '',
   },
@@ -26,7 +26,7 @@ export const teamData = [
     name: '구현웅',
     position: '심사역',
     company:
-      'Clarivate Analytics/ Agilent Technologies/ Hewlett Packard / Enterprise',
+      'Clarivate Analytics\u000AAgilent Technologies\u000AHewlett Packard\u000AEnterprise',
     active: '',
     exit: '',
   },
@@ -34,7 +34,7 @@ export const teamData = [
     name: '이승현',
     position: '심사역',
     company:
-      'HIBINO / 로우파트너스/ Kosnet Technology Investment / 중소벤처기업부 전문엔젤투자자',
+      'HIBINO\u000A로우파트너스\u000AKosnet Technology Investment\u000A중소벤처기업부 전문엔젤투자자',
     active:
       '엔진비주얼웨이브, 차지인, HN노바텍, 라라스테이션, 고산테크, 지알엠케이',
     exit: '',
@@ -42,7 +42,7 @@ export const teamData = [
   {
     name: '이현경',
     position: '부장',
-    company: '에트리홀딩스 / Reventures',
+    company: '에트리홀딩스\u000AReventures',
     active: '',
     exit: '',
   },
