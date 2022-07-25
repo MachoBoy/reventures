@@ -12,7 +12,7 @@ const TeamCard = ({ name, position, company, active, exit }: Props) => {
       <div className='font-semibold text-3xl text-[#333333]'>{name}</div>
       <div className='text-[#666666]'>
         <div className=' text-xl'>{position}</div>
-        <div className='mt-3 text-lg'>{company}</div>
+        <div className='mt-3 text-lg whitespace-pre-wrap'>{company}</div>
         {active ? (
           <div>
             <div className='mt-3 font-semibold'>Active:</div>
@@ -22,7 +22,7 @@ const TeamCard = ({ name, position, company, active, exit }: Props) => {
         {exit ? (
           <div>
             <div className='mt-3 font-semibold'>EXIT:</div>
-            <div>와이엠텍, 세경하이테크, 휴이노, 가드넥, 지디케이화장품</div>
+            <div>{exit}</div>
           </div>
         ) : null}
       </div>

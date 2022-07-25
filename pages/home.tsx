@@ -144,34 +144,38 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
       <div className='sixth-section w-full pt-[60px] pb-[81px] bg-[#1A1A1A] px-6'>
         <div className='w-full max-w-[1143px] m-auto flex flex-col'>
           <MainSectionTitle title='contact us' isDark={true} />
-          <div className='mt-12 flex flex-row gap-7 sm:flex-col sm:mt-5'>
-            <div className='w-full'>
-              <div className='text-gray-eee text-xl font-semibold sm:text-base text-left sm:text-center'>
-                서울 영등포구 여의대로 108 파크원타워1 4~5층
+          <div className='mt-12 flex flex-col '>
+            <div className='mt-5 flex flex-row gap-7 sm:flex-col sm:mt-5'>
+              <div className='w-full'>
+                <div className='text-gray-eee text-xl font-semibold sm:text-base text-left sm:text-center'>
+                  서울 강남구 역삼로 165 해성빌딩 팁스타운S1 5층 D호실
+                </div>
+                <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base text-left sm:text-center'>
+                  Tipstown S1 5F, 165 Yeoksam-ro, Gangnam-gu, Seoul Republic of
+                  Korea
+                </div>
+                <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src='/img_map2.png'
+                />
               </div>
-              <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base text-left sm:text-center'>
-                108, Yeoui-daero, Yeongdeungpo-gu, Seoul, Republic of Korea
+              <div className='w-full'>
+                <div className='text-gray-eee text-xl font-semibold sm:text-base'>
+                  대전 유성구 대학로 99 충남대학교, 대전 팁스타운 506호
+                </div>
+                <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base'>
+                  Chung-nam Univ, Tipstown 99, Daehak-ro, Yuseong-gu, Daejeon
+                  Republic of Korea
+                </div>
+                <Image
+                  width='558'
+                  height='522'
+                  alt='google-map'
+                  src='/img_map1.png'
+                />
               </div>
-              <Image
-                width='558'
-                height='522'
-                alt='google-map'
-                src='/img_map1.png'
-              />
-            </div>
-            <div className='w-full'>
-              <div className='text-gray-eee text-xl font-semibold sm:text-base'>
-                대전 유성구 궁동로 21 대전 팁스타운(TIPS TOWN)
-              </div>
-              <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base'>
-                21, Gungdong-ro, Yuseong-gu, Daejeon, Republic of Korea
-              </div>
-              <Image
-                width='558'
-                height='522'
-                alt='google-map'
-                src='/img_map2.png'
-              />
             </div>
           </div>
         </div>
