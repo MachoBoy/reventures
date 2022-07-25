@@ -35,7 +35,7 @@ const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
       <div className='w-full max-w-[1140px] m-auto flex justify-between items-center'>
         <div className='header-logo z-10'>
           <Link href='/'>
-            <a className='mt-1 block'>
+            <a className='mt-1 block' onClick={() => handleMobileNav()}>
               <Image
                 layout='fixed'
                 width={70}
@@ -86,7 +86,7 @@ const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
       </div>
       <div
         className={`bg-black fixed top-0 w-1/3 md:w-2/3 sm:w-full h-screen px-6 pb-6 pt-20 ${
-          mobileNavOpen ? 'right-0' : '-right-[999px]'
+          mobileNavOpen ? 'right-0' : '-right-[999px] delay-500'
         } transition-[right] ease-in-out duration-200`}
       >
         <MobileNav handleMobileNav={handleMobileNav} />
