@@ -151,8 +151,8 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
                   서울 강남구 역삼로 165 해성빌딩 팁스타운S1 5층 D호실
                 </div>
                 <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base text-left sm:text-center'>
-                  Tipstown S1 5F, 165 Yeoksam-ro, Gangnam-gu, Seoul Republic of
-                  Korea
+                  Unit D, Tipstown S1 5F, 165 Yeoksam-ro, Gangnam-gu, Seoul
+                  Republic of Korea
                 </div>
                 <Image
                   width='558'
@@ -166,8 +166,8 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
                   대전 유성구 대학로 99 충남대학교, 대전 팁스타운 506호
                 </div>
                 <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base'>
-                  Chung-nam Univ, Tipstown 99, Daehak-ro, Yuseong-gu, Daejeon
-                  Republic of Korea
+                  Unit 506, Chung-nam Univ, Tipstown 99, Daehak-ro, Yuseong-gu,
+                  Daejeon Republic of Korea
                 </div>
                 <Image
                   width='558'
