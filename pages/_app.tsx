@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client/react';
 import { client } from '../lib/apollo';
+import ReactModal from 'react-modal';
 import Layout from '../components/layout/layout';
 import '../styles/globals.css';
 
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
     }
   }, []);
+  ReactModal.setAppElement('#__next');
   return (
     <Layout>
       <ApolloProvider client={client}>

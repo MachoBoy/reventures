@@ -1,6 +1,7 @@
 import { useEffect, useState, KeyboardEvent } from 'react';
-import { useLazyQuery, useQuery, ApolloError } from '@apollo/client';
+import { useLazyQuery, ApolloError } from '@apollo/client';
 import PortfolioCard from '../portfolio-card/portfolioCard';
+import PortfolioCardMobile from '../portpolio-card-mobile/portfolioCardMobile';
 import LoadingButton from '../loading-button/loading-button';
 import SectorCategoryButton from '../sector-category-button/SectorCategoryButton';
 import { GET_PORTFOLIO_POSTS } from '../../lib/queries/portfolio/get-portfolio';
@@ -169,11 +170,11 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
       <div className='mt-14 uppercase text-xl text-black font-semibold sm:mt-6'>
         sector
       </div>
-      <div className=''>
+      <div>
         {categories?.map(({ categoryId, name }, index) => {
           return (
             <SectorCategoryButton
-              key={categoryId}
+              key={categoryId ? categoryId + index : categoryId}
               categoryId={categoryId}
               name={name}
               color='#6D7278'
@@ -217,31 +218,55 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
         {!sectorLoading ? (
           <div>
             {postsData.length > 0 ? (
-              <div className='w-full grid grid-cols-3 gap-x-2 lg:grid-cols-2 md:grid-cols-1'>
-                {postsData.map(
-                  (
-                    { stage, logo, companyName, sector, companyDesc }: PostType,
-                    index: number
-                  ) => {
-                    return (
-                      <div
-                        key={index}
-                        className='hover:-m-4 transition-[margin]'
-                      >
-                        <PortfolioCard
-                          stage={stage}
-                          logo={logo}
-                          companyName={companyName}
-                          sector={sector}
-                          companyDesc={companyDesc}
-                          index={index}
-                          openModal={() => openModal(postsData, index)}
-                        />
-                      </div>
-                    );
-                  }
-                )}
-              </div>
+              <>
+                <div className='w-full grid grid-cols-3 gap-x-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 sm:gap-x-3 sm:gap-y-7 sm:mt-10'>
+                  {postsData.map(
+                    (
+                      {
+                        stage,
+                        logo,
+                        companyName,
+                        sector,
+                        companyDesc,
+                      }: PostType,
+                      index: number
+                    ) => {
+                      return (
+                        <div key={index}>
+                          <div
+                            key={companyName ? companyName + index : index}
+                            className='hover:-m-4 transition-[margin] block sm:hidden'
+                          >
+                            <PortfolioCard
+                              stage={stage}
+                              logo={logo}
+                              companyName={companyName}
+                              sector={sector}
+                              companyDesc={companyDesc}
+                              index={index}
+                              openModal={() => openModal(postsData, index)}
+                            />
+                          </div>
+                          <div
+                            key={companyDesc ? companyDesc + index : index}
+                            className='hidden sm:block justify-items-center justify-self-center'
+                          >
+                            <PortfolioCardMobile
+                              stage={stage}
+                              logo={logo}
+                              companyName={companyName}
+                              sector={sector}
+                              companyDesc={companyDesc}
+                              index={index}
+                              openModal={() => openModal(postsData, index)}
+                            />
+                          </div>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
+              </>
             ) : (
               <div className='mt-4 h-[455px] flex justify-center items-center'>
                 <div>

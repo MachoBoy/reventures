@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
@@ -5,9 +6,19 @@ import MainSectionTitle from '../components/main-section-title/mainSectionTitle'
 import TipsApplyHow from '../components/tips-apply-how/tipsApplyHow';
 // import BrandBox from '../components/brand-box/brandBox';
 import { tipsApplyData, tipsCategoryData } from '../data/tips-data';
+import Modal from '../components/modal/modal';
 // import { portfolioData } from '../data/portfolio-data';
 
 const Tips = () => {
+  const [isModalOpen, setModal] = useState(false);
+  const openModal = () => {
+    setModal(true);
+    // document.body.style.overflow = 'hidden';
+  };
+  const closeModal = () => {
+    setModal(false);
+    // document.body.style.overflow = 'unset';
+  };
   return (
     <div className='w-full max-w-[1920px] mx-auto'>
       <Head>
@@ -26,6 +37,19 @@ const Tips = () => {
         </div>
       </div>
       <div className='w-full max-w-[1140px] pt-20 mx-auto px-6 sm:pt-12'>
+        {/* image zoom modal */}
+        <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
+          <div className='z-20 absolute w-5/6 h-[500px] inset-0 m-auto overflow-x-auto bg-white'>
+            <Image
+              layout='fixed'
+              width={1146}
+              height={467}
+              src='/img_table.png'
+              alt='tips-table'
+              quality={100}
+            />
+          </div>
+        </Modal>
         <div className='w-full'>
           <MainSectionTitle title='tips program' isDark={false} />
           <div className='mt-14 flex flex-row justify-center items-center lg:flex-col'>
@@ -69,6 +93,17 @@ const Tips = () => {
               alt='tips-table'
             />
           </div>
+          <button
+            className='relative hidden w-[37px] h-[37px] mx-auto mt-4 lg:block'
+            onClick={() => openModal()}
+          >
+            <Image
+              layout='fill'
+              objectFit='contain'
+              alt='Magnifier'
+              src='/btn_zoom.png'
+            />
+          </button>
         </div>
         {/* <div className='mt-24 w-full'>
           <MainSectionTitle title='tips 보육기업' isDark={false} />

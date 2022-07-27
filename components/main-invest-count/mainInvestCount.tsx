@@ -6,7 +6,7 @@ interface Props {
 
 const MainInvestCount = ({ number, title, subtitle }: Props) => {
   return (
-    <div className='flex items-center flex-col lg:mt-6 sm:mt-8'>
+    <div className='flex items-center flex-col lg:mt-6 sm:mt-8 lg:first:col-span-3 sm:first:col-span-1'>
       <div className='number text-gray-eee text-[58px] lg:text-5xl sm:text[40px]'>
         {number}
       </div>

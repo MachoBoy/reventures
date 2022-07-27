@@ -1,12 +1,14 @@
 interface Props {
   open: boolean;
-  handleMobileNav: Function;
+  openMobileNav: Function;
+  closeMobileNav: Function;
 }
 
-const HamburgerMenu = ({ open, handleMobileNav }: Props) => {
+const HamburgerMenu = ({ open, openMobileNav, closeMobileNav }: Props) => {
+  // console.log(open);
   return (
     <button
-      onClick={() => handleMobileNav()}
+      onClick={() => (open ? closeMobileNav() : openMobileNav())}
       className='flex items-center space-x-2 focus:outline-none'
     >
       <div className='w-6 flex items-center justify-center relative'>

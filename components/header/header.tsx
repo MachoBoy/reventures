@@ -9,11 +9,12 @@ import { navData } from '../../data/nav-data';
 
 interface Props {
   mobileNavOpen: boolean;
-  handleMobileNav: Function;
+  openMobileNav: Function;
+  closeMobileNav: Function;
 }
 
 // Insight 메뉴 추가되면 max-w-[699px]
-const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
+const Header = ({ mobileNavOpen, openMobileNav, closeMobileNav }: Props) => {
   const { scrollY } = useScroll();
   const [scrollPosition, setScrollPosition] = useState(0);
   const router = useRouter();
@@ -25,7 +26,6 @@ const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
     });
   }, [scrollY]);
 
-  //console.log(router);
   return (
     <div
       className={`header w-full fixed top-0 left-0 m-auto flex justify-center items-center z-50 transition-[height] px-6 ${
@@ -35,7 +35,7 @@ const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
       <div className='w-full max-w-[1140px] m-auto flex justify-between items-center'>
         <div className='header-logo z-10'>
           <Link href='/'>
-            <a className='mt-1 block' onClick={() => handleMobileNav()}>
+            <a className='mt-1 block' onClick={() => closeMobileNav()}>
               <Image
                 layout='fixed'
                 width={70}
@@ -80,7 +80,8 @@ const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
         <div className='w-8 h-8 justify-center items-center hidden xl:hidden lg:flex z-10'>
           <HamburgerMenu
             open={mobileNavOpen}
-            handleMobileNav={handleMobileNav}
+            openMobileNav={openMobileNav}
+            closeMobileNav={closeMobileNav}
           />
         </div>
       </div>
@@ -89,7 +90,7 @@ const Header = ({ mobileNavOpen, handleMobileNav }: Props) => {
           mobileNavOpen ? 'right-0' : '-right-[999px] delay-500'
         } transition-[right] ease-in-out duration-200`}
       >
-        <MobileNav handleMobileNav={handleMobileNav} />
+        <MobileNav closeMobileNav={closeMobileNav} />
       </div>
     </div>
   );

@@ -3,10 +3,10 @@ import { useRouter } from 'next/router';
 import { navData } from '../../data/nav-data';
 
 interface Props {
-  handleMobileNav: Function;
+  closeMobileNav: Function;
 }
 
-const MobileNav = ({ handleMobileNav }: Props) => {
+const MobileNav = ({ closeMobileNav }: Props) => {
   const router = useRouter();
   //console.log(router);
   return (
@@ -17,7 +17,7 @@ const MobileNav = ({ handleMobileNav }: Props) => {
             <li className='mt-4' key={index}>
               <Link href={link}>
                 <a
-                  onClick={() => handleMobileNav()}
+                  onClick={() => closeMobileNav()}
                   className={`text-lg lg:text-xl ${
                     router.pathname === link ? 'text-white' : 'text-[#FFFFFF80]'
                   } font-semibold`}

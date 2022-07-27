@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className='w-full max-w-[1920px] overflow-hidden mx-auto'>
       <div className='w-full max-w-[1920px] mx-auto flex flex-col bg-[#222222] bg-footer-building bg-bottom bg-no-repeat pb-32 sm:bg-none sm:pb-10'>
-        <div className='relative w-full max-w-[1093px] py-12 px-6 mx-auto sm:py-9 sm:text-center'>
+        <div className='relative w-full max-w-[1093px] py-12 px-6 mx-auto sm:py-9 lg:text-center'>
           <Image
             layout='fixed'
             src='/logo_sm.png'

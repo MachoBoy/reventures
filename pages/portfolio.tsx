@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { client } from '../lib/apollo';
+import ReactModal from 'react-modal';
+import useWidth from '../hook/useWidth';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import BrandSlider from '../components/brand-slider/brandSlider';
 import BrandBox from '../components/brand-box/brandBox';
@@ -36,15 +38,20 @@ const Portfolio = ({
     sector: '',
     __typename: '',
   });
+  const windowWidth = useWidth();
+  // console.log(windowWidth);
 
   const openModal = (postsData: [], index: number) => {
     //const post = portfolioPosts[index];
+    console.log(postsData[index]);
     setModalOpen(true);
     setActivePost(postsData[index]);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setModalOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
   return (
@@ -100,19 +107,33 @@ const Portfolio = ({
           categories={categories}
         />
       </div>
-      <div
-        className={`fixed top-0 m-0 w-full h-full min-h-[200px] bg-[#0000001A]/[0.5] inset-0 ${
-          isModalOpen ? 'block' : 'hidden'
-        }`}
-      ></div>
-      {isModalOpen ? (
-        <div className='fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 my-[5%] mx-auto w-[1060px] h-[535px] bg-white'>
+      <div>
+        <ReactModal
+          isOpen={isModalOpen}
+          style={{
+            overlay: { backgroundColor: 'rgba(0,0,1,0.5)' },
+            content: {
+              // boxSizing: 'content-box',
+              padding: `${windowWidth > 640 ? '56px 80px' : '20px'}`,
+              width: `${windowWidth > 640 ? '100%' : '100vw'}`,
+              maxWidth: '1060px',
+              height: `${windowWidth > 640 ? '535px' : 'calc(100vh - 60px)'}`,
+              inset: 0,
+              zIndex: 999,
+              borderRadius: 'none',
+              marginTop: `${windowWidth > 640 ? 'none' : '60px'}`,
+              overflow: 'none',
+              border: 'none',
+              margin: `${windowWidth > 640 ? 'auto' : 'none'}`,
+            },
+          }}
+        >
           <PortfolioCardDetail
             closeModal={closeModal}
             activePost={activePost}
           />
-        </div>
-      ) : null}
+        </ReactModal>
+      </div>
     </div>
   );
 };

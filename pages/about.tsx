@@ -22,8 +22,9 @@ const About = () => {
             <div className='mt-5 text-4xl text-[#FEFEFE] lg:text-3xl md:text-center sm:text-[26px] sm:mt-[26px]'>
               벤처투자를 위한
             </div>
-            <div className='text-4xl text-[#FEFEFE] lg:text-3xl md:text-center sm:text-[26px]'>
-              투자자와 스타트업의 파트너, 리벤처스
+            <div className='inline-flex flex-row text-4xl text-[#FEFEFE] lg:text-3xl md:flex-col md:text-center sm:text-2xl'>
+              <div>투자자와 스타트업의 파트너,</div>
+              <div>리벤처스</div>
             </div>
           </div>
           <div className='flex justify-center items-center md:hidden'>

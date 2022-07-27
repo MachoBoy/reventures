@@ -21,7 +21,7 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           autoPlay
           loop
           muted
-          className='w-full h-full absolute left-0 -top-14 sm:top-0'
+          className='w-full h-full absolute left-0 -top-14 sm:top-0 lg:transform lg:scale-150'
         >
           <source src='main.mp4' type='video/mp4' />
         </video>
@@ -31,26 +31,26 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         <div className='absolute right-7 top-1/3 -mt-6 block lg:hidden'>
           <ScrollIndicator />
         </div>
-        <div className='absolute h-[220px] top-1/2 left-1/2 -translate-y-1/2 -translate-x-[29.5rem] lg:relative lg:w-full lg:text-center lg:translate-x-0 lg:left-0 lg:top-0 lg:translate-y-0 lg:h-auto'>
+        <div className='absolute h-[220px] top-1/2 left-1/2 -translate-y-1/2 -translate-x-[29.5rem] px-6 lg:relative lg:w-full lg:text-center lg:translate-x-0 lg:left-0 lg:top-0 lg:-translate-y-[1/6] lg:h-auto'>
           <div className='flex flex-row items-center'>
             <div className='w-[5px] h-[93px] bg-[#64676A] block lg:hidden'></div>
-            <div className='ml-5 text-white text-[120px] font-semibold lg:ml-0 lg:text-8xl lg:w-full lg:text-center md:text-7xl sm:text-5xl'>
+            <div className='ml-5 text-white text-[120px] font-semibold lg:ml-0 lg:text-8xl lg:w-full lg:text-center sm:text-5xl'>
               RE:VENTURES
             </div>
           </div>
-          <div className='block ml-8 text-4xl text-[#A2A4A7] text-left lg:ml-0 lg:text-center lg:mt-5 md:text-3xl sm:text-2xl'>
+          <div className='block ml-8 text-4xl text-[#A2A4A7] text-left lg:ml-0 lg:text-center lg:mt-5 lg:text-3xl lg:uppercase sm:text-2xl'>
             Venture for the early starts-up
           </div>
         </div>
-        <div className='hidden lg:relative lg:block lg:-mb-32 mt-16'>
+        <div className='hidden lg:relative lg:block lg:-mt-10 mt-16'>
           <ScrollIndicator />
         </div>
       </div>
       <div className='second-section m-auto flex justify-center items-center flex-row lg:flex-col pb-0 px-6 lg:pb-7'>
-        <div className='about-left relative w-full max-w-[710px] h-[845px] md:h-auto'>
-          <div className='block w-full h-full shadow-2xl absolute inset-0 p-14 z-20 bg-white -mt-11 md:relative'>
+        <div className='about-left relative w-full max-w-[710px] mb-10'>
+          <div className='block w-full h-full shadow-2xl p-14 z-20 bg-white -mt-11 lg:-mt-44 md:relative'>
             <MainSectionTitle title='About' isDark={false} />
-            <p className='text-2xl text-[#3D3D3D] mt-9 text-left md:text-center sm:mt-5 sm:text-xl'>
+            <p className='text-2xl text-[#3D3D3D] mt-9 text-left lg:text-center sm:mt-5 sm:text-xl'>
               벤처투자를 위한 투자자와 스타트업의 파트너, 리벤처스
             </p>
             <div className='mt-9'>
@@ -80,7 +80,7 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           </div>
         </div>
       </div>
-      <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat sm:pt-[50px] sm:pb-[55px]'>
+      <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat px-6 sm:pt-[50px] sm:pb-[55px]'>
         <div className='text-white text-[80px] font-semibold lg:text-6xl md:text-5xl sm:text-[40px]'>
           RE:VENTURES
         </div>
@@ -127,7 +127,7 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           <div className='w-full max-w-[1143px] m-auto'>
             <MainSectionTitle title='our investment history' isDark={true} />
           </div>
-          <div className='w-full max-w-[1188px] flex flex-row justify-between mt-10 m-auto lg:grid lg:grid-cols-2 sm:grid-cols-1 sm:mt-0'>
+          <div className='w-full max-w-[1188px] flex flex-row justify-between mt-10 m-auto lg:grid lg:grid-cols-3 sm:grid-cols-1 sm:mt-0'>
             {investCountData.map(({ number, title, subtitle }, index) => {
               return (
                 <MainInvestCount
@@ -144,7 +144,7 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
       <div className='sixth-section w-full pt-[60px] pb-[81px] bg-[#1A1A1A] px-6'>
         <div className='w-full max-w-[1143px] m-auto flex flex-col'>
           <MainSectionTitle title='contact us' isDark={true} />
-          <div className='mt-12 flex flex-col '>
+          <div className='mt-12 flex flex-col sm:mt-4'>
             <div className='mt-5 flex flex-row gap-7 sm:flex-col sm:mt-5'>
               <div className='w-full'>
                 <div className='text-gray-eee text-xl font-semibold sm:text-base text-left sm:text-center'>

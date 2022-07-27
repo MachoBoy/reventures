@@ -14,8 +14,14 @@ const Layout = ({ children }: Props) => {
     setMounted(true);
   }, []);
 
-  const handleMobileNav = () => {
-    setMobileNavOpen(!mobileNavOpen);
+  const openMobileNav = () => {
+    //console.log('open nav');
+    setMobileNavOpen(true);
+  };
+
+  const closeMobileNav = () => {
+    //console.log('close nav');
+    setMobileNavOpen(false);
   };
 
   if (!mounted) return null;
@@ -24,10 +30,11 @@ const Layout = ({ children }: Props) => {
       <>
         <Header
           mobileNavOpen={mobileNavOpen}
-          handleMobileNav={handleMobileNav}
+          openMobileNav={openMobileNav}
+          closeMobileNav={closeMobileNav}
         />
         <main
-          onClick={mobileNavOpen ? () => handleMobileNav() : () => {}}
+          onClick={() => (mobileNavOpen ? closeMobileNav() : null)}
           className={`w-full max-w-[1920px] mx-auto overflow-hidden ${
             mobileNavOpen ? 'blur-[2px]' : 'blur-none'
           }`}
