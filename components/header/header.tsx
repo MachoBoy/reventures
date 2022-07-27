@@ -39,7 +39,7 @@ const Header = () => {
             </a>
           </Link>
         </div>
-        <nav className='menu-container flex w-full max-w-[600px]'>
+        <nav className='menu-container flex w-full max-w-[470px]'>
           <ul className='menu w-full flex justify-between items-center'>
             {navData.map(({ title, link, children }, index) => {
               return (

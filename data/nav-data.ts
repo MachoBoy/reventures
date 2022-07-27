@@ -18,10 +18,10 @@ export const navData: Nav[] = [
     title: 'TIPS',
     link: '/tips',
   },
-  {
-    title: 'Team',
-    link: '/team',
-  },
+  // {
+  //   title: 'Team',
+  //   link: '/team',
+  // },
   {
     title: 'Portfolio',
     link: '/portfolio',
