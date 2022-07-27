@@ -19,6 +19,11 @@ module.exports = {
 
       sm: { max: '639px' },
       // => @media (max-width: 639px) { ... }
+
+      'slide-xl': { max: '1179px' },
+      'slide-lg': { max: '1050px' },
+      'slide-md': { max: '800px' },
+      'slide-sm': { max: '720px' },
     },
 
     extend: {

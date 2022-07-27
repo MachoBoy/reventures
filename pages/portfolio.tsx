@@ -64,7 +64,7 @@ const Portfolio = ({
         />
       </Head>
       <div className='h-[80px] bg-portfolio-top bg-center bg-no-repeat'></div>
-      <div className='w-full max-w-[1140px] mx-auto pt-14 pb-24 px-6'>
+      <div className='w-full max-w-[1188px] mx-auto pt-14 pb-24 px-6'>
         <MainSectionTitle title='ATTRACTING INVESTMENT' isDark={false} />
         <div className='mt-14 sm:hidden'>
           {sliderPosts ? (

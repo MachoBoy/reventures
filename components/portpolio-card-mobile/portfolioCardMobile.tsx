@@ -22,7 +22,7 @@ const PortfolioCardMobile = ({
 }: Props) => {
   return (
     <div
-      className='w-[150px] flex flex-col justify-center items-start'
+      className='w-[150px] flex flex-col justify-center items-center mx-auto'
       onClick={() => openModal(index)}
     >
       <div className='relative w-full h-[150px] bg-white shadow-2xl p-[6px] flex justify-center items-center'>

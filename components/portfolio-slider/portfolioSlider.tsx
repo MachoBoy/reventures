@@ -22,14 +22,14 @@ const PortfolioSlider = ({ children }: Props) => {
     ),
     responsive: [
       {
-        breakpoint: 1191,
+        breakpoint: 1050,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 639,
+        breakpoint: 670,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

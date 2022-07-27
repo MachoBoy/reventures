@@ -193,7 +193,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
               width='13'
               height='13'
               fill='currentColor'
-              className='bi bi-search absolute right-[120px] bottom-4 text-[#747474]'
+              className='bi bi-search absolute top-1/2 right-0 -translate-y-1/2 -translate-x-32 text-[#747474]'
               viewBox='0 0 16 16'
             >
               <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
@@ -219,7 +219,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
           <div>
             {postsData.length > 0 ? (
               <>
-                <div className='w-full grid grid-cols-3 gap-x-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 sm:gap-x-3 sm:gap-y-7 sm:mt-10'>
+                <div className='w-full grid grid-cols-3 gap-x-2 lg:grid-cols-2 md:grid-cols-3 sm:grid-cols-2 sm:gap-x-3 sm:gap-y-7 sm:mt-10'>
                   {postsData.map(
                     (
                       {
@@ -235,7 +235,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
                         <div key={index}>
                           <div
                             key={companyName ? companyName + index : index}
-                            className='hover:-m-4 transition-[margin] block sm:hidden'
+                            className='hover:-m-4 transition-[margin] block md:hidden'
                           >
                             <PortfolioCard
                               stage={stage}
@@ -249,7 +249,7 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
                           </div>
                           <div
                             key={companyDesc ? companyDesc + index : index}
-                            className='hidden sm:block justify-items-center justify-self-center'
+                            className='hidden md:block justify-items-center justify-self-center'
                           >
                             <PortfolioCardMobile
                               stage={stage}

@@ -103,12 +103,12 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className='py-28 w-full sm:pt-12 sm:pb-16'>
-        <div className='w-full max-w-[1142px] mx-auto px-6'>
+      <div className='py-28 px-6 w-full sm:pt-12 sm:pb-16'>
+        <div className='w-full max-w-[1142px] mx-auto'>
           <MainSectionTitle title='corporate identity' isDark={false} />
           <div className='mt-14 w-full flex flex-row gap-14 md:flex-col md:justify-center md:items-center sm:mt-8'>
-            <div className='w-full flex flex-col gap-y-7 lg:gap-y-4 md:justify-center md:items-center sm:items-start sm:justify-start'>
-              <div className='relative w-full max-w-[557px]'>
+            <div className='w-full max-w-[557px] flex flex-col gap-y-7 md:justify-center md:items-center sm:items-start sm:justify-start'>
+              <div className='relative w-full'>
                 <Image
                   layout='responsive'
                   width={557}
@@ -138,18 +138,18 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-col w-full max-w-[530px] text-[#3D3D3D] text-2xl lg:text-xl md:text-center md:items-center sm:text-base'>
+            <div className='flex flex-col w-full max-w-[530px] text-[#3D3D3D] text-2xl lg:text-xl md:text-center xl:items-center sm:text-base'>
               <p>
                 혁신가들의 순수한 이념과 계속되는 도전이 활발하게 지속될 수
                 있도록 사회가 되는 것을 염원하는 (Re:)
               </p>
-              <p className='mt-20 lg:mt-10 sm:mt-5'>
+              <p className='mt-10 lg:mt-10 sm:mt-5'>
                 그리고 혁신가들의 모험을 함께하기 위해 Venture(s)의 의미는
                 파트너로서 멀리서 응원이 아닌 함께 성공을 향해 달리는
                 Own-Onership-Partner가 되고자 합니다.
               </p>
               <Link href='https://reventures-vc.com/wp-content/uploads/2022/07/logo.zip'>
-                <a className='mt-[42px] w-full max-w-[362px] h-[77px] font-medium text-2xl text-white flex justify-center items-center bg-black hover:bg-[#6D7278] transition-colors sm:h-[60px]'>
+                <a className='mt-[82px] w-full max-w-[362px] h-[77px] font-medium text-2xl text-white flex justify-center items-center bg-black hover:bg-[#6D7278] transition-colors sm:h-[60px]'>
                   CI 다운로드
                 </a>
               </Link>
