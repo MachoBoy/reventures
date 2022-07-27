@@ -12,7 +12,7 @@ import { PortfolioProps } from '../data/portfolio-data';
 import PortfolioNotFound from '../components/portfolio-not-found/portfolio-not-found';
 
 const Home = ({ portfolioPosts }: PortfolioProps) => {
-  // console.log(portfolioPosts);
+  console.log(portfolioPosts);
   //pt-[320px] pl-[358px]
   return (
     <div className='w-full'>
