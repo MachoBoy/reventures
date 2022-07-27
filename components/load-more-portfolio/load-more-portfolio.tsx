@@ -187,20 +187,20 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
       </div>
       <div className='w-full mt-6 flex justify-end sm:hidden'>
         <div className='flex flex-row relative'>
-          <div>
+          <div className='absolute top-1/2 right-0 -translate-y-1/2 -translate-x-32'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='13'
               height='13'
               fill='currentColor'
-              className='bi bi-search absolute top-1/2 right-0 -translate-y-1/2 -translate-x-32 text-[#747474]'
+              className='bi bi-search text-[#747474]'
               viewBox='0 0 16 16'
             >
               <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
             </svg>
           </div>
           <input
-            className='w-full max-w-[320px] px-4 py-2 border-[1px] border-[#0000001A]'
+            className='w-full min-w-[320px] px-4 py-2 border-[1px] border-[#0000001A]'
             type='text'
             placeholder='기업명을 입력해주세요'
             onChange={(e) => setSearchValue(e.target.value)}
