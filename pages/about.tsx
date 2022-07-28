@@ -107,7 +107,7 @@ const About = () => {
         <div className='w-full max-w-[1142px] mx-auto'>
           <MainSectionTitle title='corporate identity' isDark={false} />
           <div className='mt-14 w-full flex flex-row gap-14 md:flex-col md:justify-center md:items-center sm:mt-8'>
-            <div className='w-full max-w-[557px] flex flex-col gap-y-7 md:justify-center md:items-center sm:items-start sm:justify-start'>
+            <div className='w-full max-w-[557px] flex flex-col gap-y-7 lg:gap-y-4 md:justify-center md:items-center sm:items-start sm:justify-start'>
               <div className='relative w-full'>
                 <Image
                   layout='responsive'
@@ -149,7 +149,7 @@ const About = () => {
                 Own-Onership-Partner가 되고자 합니다.
               </p>
               <Link href='https://reventures-vc.com/wp-content/uploads/2022/07/logo.zip'>
-                <a className='mt-[82px] w-full max-w-[362px] h-[77px] font-medium text-2xl text-white flex justify-center items-center bg-black hover:bg-[#6D7278] transition-colors sm:h-[60px]'>
+                <a className='mt-[82px] w-full max-w-[362px] h-[77px] font-medium text-2xl text-white flex justify-center items-center bg-black hover:bg-[#6D7278] transition-colors lg:mt-[27px] sm:h-[60px]'>
                   CI 다운로드
                 </a>
               </Link>
