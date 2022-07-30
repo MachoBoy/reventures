@@ -19,29 +19,29 @@ const ContactFormInput = ({
 }: Props) => {
   const { register } = useFormContext();
   return (
-    <div className='flex flex-col'>
+    <>
       <div
-        className={`flex flex-row justify-between items-center ${
-          isShort ? 'w-[400px]' : 'w-[708px]'
-        }`}
+        className={`w-full flex flex-row justify-between items-center mt-0 md:mt-4`}
       >
-        <label className='text-base text-[#333333] font-semibold before:content-["*"] before:text-red-500'>
+        <label className='w-[85px] block text-base text-[#333333] font-semibold before:content-["*"] before:text-red-500'>
           {label}
         </label>
         <input
           {...register(`${name}`, {
             required: true,
           })}
-          className={`${
-            isShort ? 'w-[320px]' : 'w-[635px]'
-          }  h-[46px] border-[1px] ${
+          className={`w-full ${
+            isShort
+              ? 'max-w-[320px] md:max-w-full'
+              : 'max-w-[635px] md:max-w-full'
+          } h-[46px] border-[1px] ${
             !error ? 'border-[#0000001A]' : 'border-red-500'
           }  pl-4`}
           type={type}
           placeholder={placeholder}
         />
       </div>
-    </div>
+    </>
   );
 };
 

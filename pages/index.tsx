@@ -24,10 +24,7 @@ export async function getStaticProps() {
   });
 
   const portfolioPosts = response?.data?.posts?.nodes.map(
-    (post: PortfolioType) => {
-      return post.portfolio;
-      // return { ...post.portfolio, logo: post?.portfolio.logo.sourceUrl };
-    }
+    (post: PortfolioType) => post.portfolio
   );
 
   return {

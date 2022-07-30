@@ -1,6 +1,7 @@
 import { useEffect, useState, KeyboardEvent } from 'react';
-import { useLazyQuery, useQuery, ApolloError } from '@apollo/client';
+import { useLazyQuery, ApolloError } from '@apollo/client';
 import PortfolioCard from '../portfolio-card/portfolioCard';
+import PortfolioCardMobile from '../portpolio-card-mobile/portfolioCardMobile';
 import LoadingButton from '../loading-button/loading-button';
 import SectorCategoryButton from '../sector-category-button/SectorCategoryButton';
 import { GET_PORTFOLIO_POSTS } from '../../lib/queries/portfolio/get-portfolio';
@@ -138,11 +139,42 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
 
   return (
     <>
+      <div className='hidden mt-5 w-full sm:flex flex-row relative sm:flex-col'>
+        <div>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='13'
+            height='13'
+            fill='currentColor'
+            className='bi bi-search absolute right-[20px] bottom-[75px] text-[#747474]'
+            viewBox='0 0 16 16'
+          >
+            <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
+          </svg>
+        </div>
+        <input
+          className='w-full max-w-[320px] px-4 py-2 border-[1px] border-[#0000001A] sm:max-w-full'
+          type='text'
+          placeholder='기업명을 입력해주세요'
+          onChange={(e) => setSearchValue(e.target.value)}
+          onKeyDown={(e) => handleKeyDown(e)}
+        />
+        <button
+          onClick={() => getSectorItems()}
+          className='mt-4 w-full h-[46px] bg-black flex justify-center items-center text-white font-semibold'
+        >
+          Search
+        </button>
+      </div>
+
+      <div className='mt-14 uppercase text-xl text-black font-semibold sm:mt-6'>
+        sector
+      </div>
       <div>
         {categories?.map(({ categoryId, name }, index) => {
           return (
             <SectorCategoryButton
-              key={categoryId}
+              key={categoryId ? categoryId + index : categoryId}
               categoryId={categoryId}
               name={name}
               color='#6D7278'
@@ -153,22 +185,22 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
           );
         })}
       </div>
-      <div className='w-full mt-6 flex justify-end'>
+      <div className='w-full mt-6 flex justify-end sm:hidden'>
         <div className='flex flex-row relative'>
-          <div>
+          <div className='absolute top-1/2 right-0 -translate-y-1/2 -translate-x-32'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='13'
               height='13'
               fill='currentColor'
-              className='bi bi-search absolute right-[120px] bottom-4 text-[#747474]'
+              className='bi bi-search text-[#747474]'
               viewBox='0 0 16 16'
             >
               <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
             </svg>
           </div>
           <input
-            className='w-full max-w-[320px] px-4 py-2 border-[1px] border-[#0000001A]'
+            className='w-full min-w-[320px] px-4 py-2 border-[1px] border-[#0000001A]'
             type='text'
             placeholder='기업명을 입력해주세요'
             onChange={(e) => setSearchValue(e.target.value)}
@@ -186,31 +218,55 @@ const LoadMorePortfolio = ({ posts, pages, openModal, categories }: Props) => {
         {!sectorLoading ? (
           <div>
             {postsData.length > 0 ? (
-              <div className='w-full grid grid-cols-3 gap-x-2'>
-                {postsData.map(
-                  (
-                    { stage, logo, companyName, sector, companyDesc }: PostType,
-                    index: number
-                  ) => {
-                    return (
-                      <div
-                        key={index}
-                        className='hover:-m-4 transition-[margin]'
-                      >
-                        <PortfolioCard
-                          stage={stage}
-                          logo={logo}
-                          companyName={companyName}
-                          sector={sector}
-                          companyDesc={companyDesc}
-                          index={index}
-                          openModal={() => openModal(postsData, index)}
-                        />
-                      </div>
-                    );
-                  }
-                )}
-              </div>
+              <>
+                <div className='w-full grid grid-cols-3 gap-x-2 lg:grid-cols-2 md:grid-cols-3 sm:grid-cols-2 sm:gap-x-3 sm:gap-y-7 sm:mt-10'>
+                  {postsData.map(
+                    (
+                      {
+                        stage,
+                        logo,
+                        companyName,
+                        sector,
+                        companyDesc,
+                      }: PostType,
+                      index: number
+                    ) => {
+                      return (
+                        <div key={index}>
+                          <div
+                            key={companyName ? companyName + index : index}
+                            className='hover:-m-4 transition-[margin] block md:hidden'
+                          >
+                            <PortfolioCard
+                              stage={stage}
+                              logo={logo}
+                              companyName={companyName}
+                              sector={sector}
+                              companyDesc={companyDesc}
+                              index={index}
+                              openModal={() => openModal(postsData, index)}
+                            />
+                          </div>
+                          <div
+                            key={companyDesc ? companyDesc + index : index}
+                            className='hidden md:block justify-items-center justify-self-center'
+                          >
+                            <PortfolioCardMobile
+                              stage={stage}
+                              logo={logo}
+                              companyName={companyName}
+                              sector={sector}
+                              companyDesc={companyDesc}
+                              index={index}
+                              openModal={() => openModal(postsData, index)}
+                            />
+                          </div>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
+              </>
             ) : (
               <div className='mt-4 h-[455px] flex justify-center items-center'>
                 <div>

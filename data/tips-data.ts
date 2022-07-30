@@ -8,7 +8,7 @@ export const tipsApplyData = [
   {
     icon: '/ico_email.png',
     title: 'E-Mail',
-    desc: `자유양식의 사업계획서 또는 IR자료를 첨부하여 지원 \u000A E-Mail.reventuresad@reventures.co.kr \u000A FAX. 0507-0307-2001`,
+    desc: `자유양식의 사업계획서 또는 IR자료를 첨부하여 지원 \u000A E-Mail. reventuresad@reventures.co.kr \u000A FAX. 0507-0307-2001`,
     href: 'mailto: reventuresad@reventures.co.kr',
   },
 ];

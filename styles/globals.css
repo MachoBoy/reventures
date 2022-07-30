@@ -8,8 +8,12 @@
 @tailwind utilities;
 
 /* slick dot styling */
+.slick-dots li {
+  @apply sm:w-[10px] sm:h-[10px];
+}
+
 .slick-dots .slick-active div {
-  @apply bg-black w-[14px] h-[14px] -mt-[2px];
+  @apply bg-black w-[14px] h-[14px] -mt-[2px] sm:w-[10px] sm:h-[10px];
 }
 
 /* intro video opacity */

@@ -18,6 +18,22 @@ const BrandSlider = ({ children }: Props) => {
     customPaging: () => (
       <div className='w-[10px] h-[10px] rounded-full bg-[#7C7C7C92] mx-auto'></div>
     ),
+    responsive: [
+      {
+        breakpoint: 1191,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 814,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+    ],
   };
   return <Slider {...settings}>{children}</Slider>;
 };

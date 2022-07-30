@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { client } from '../lib/apollo';
+import ReactModal from 'react-modal';
+import useWidth from '../hook/useWidth';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import BrandSlider from '../components/brand-slider/brandSlider';
 import BrandBox from '../components/brand-box/brandBox';
 import PortfolioCardDetail from '../components/portfolio-card-detail/portfolioCardDetail';
-import { portfolioData } from '../data/portfolio-data';
+import PortfolioNotFound from '../components/portfolio-not-found/portfolio-not-found';
+// import { portfolioData } from '../data/portfolio-data';
 import { GET_PORTFOLIO_POSTS } from '../lib/queries/portfolio/get-portfolio';
 import { GET_PORTFOLIO_SLIDER } from '../lib/queries/portfolio/get-portfolio-slider';
 import { GET_PORTFOLIO_CATEGORIES } from '../lib/queries/portfolio/get-portfolio-categories';
@@ -35,19 +38,24 @@ const Portfolio = ({
     sector: '',
     __typename: '',
   });
+  const windowWidth = useWidth();
+  // console.log(windowWidth);
 
   const openModal = (postsData: [], index: number) => {
     //const post = portfolioPosts[index];
+    console.log(postsData[index]);
     setModalOpen(true);
     setActivePost(postsData[index]);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setModalOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
   return (
-    <div className='w-full'>
+    <div className='relative w-full'>
       <Head>
         <title>RE:VENTURES - Portfolio</title>
         <meta
@@ -56,9 +64,9 @@ const Portfolio = ({
         />
       </Head>
       <div className='h-[80px] bg-portfolio-top bg-center bg-no-repeat'></div>
-      <div className='w-full max-w-[1140px] mx-auto pt-14 pb-24'>
+      <div className='w-full max-w-[1188px] mx-auto pt-14 pb-24 px-6'>
         <MainSectionTitle title='ATTRACTING INVESTMENT' isDark={false} />
-        <div className='mt-14'>
+        <div className='mt-14 sm:hidden'>
           {sliderPosts ? (
             <BrandSlider>
               {sliderPosts.map(({ logo, companyName }, index) => {
@@ -68,30 +76,28 @@ const Portfolio = ({
               })}
             </BrandSlider>
           ) : (
-            <div className='mt-4 h-[190px] border-[1px] border-[#0000001A] flex justify-center items-center'>
-              <div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='20'
-                  height='20'
-                  fill='currentColor'
-                  className='bi bi-exclamation-triangle-fill'
-                  viewBox='0 0 16 16'
-                >
-                  <path d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
-                </svg>
-              </div>
-              <div className='text-[22px] text-[#3D3D3D] ml-4'>
-                조건에 맞는 포트폴리오가 없습니다
-              </div>
+            <div className='w-full mt-4 h-[190px]'>
+              <PortfolioNotFound />
             </div>
           )}
         </div>
-        <div className='mt-20'>
-          <MainSectionTitle title='PORTFOLIO' isDark={false} />
+        <div className='hidden md:hidden sm:block'>
+          <div className='mt-6 flex flex-row overflow-x-scroll'>
+            {sliderPosts ? (
+              sliderPosts.map(({ logo, companyName }, index) => {
+                return (
+                  <BrandBox key={index} logo={logo} companyName={companyName} />
+                );
+              })
+            ) : (
+              <div className='w-full mt-4 h-[190px]'>
+                <PortfolioNotFound />
+              </div>
+            )}
+          </div>
         </div>
-        <div className='mt-14 uppercase text-xl text-black font-semibold'>
-          sector
+        <div className='mt-20 sm:mt-11'>
+          <MainSectionTitle title='PORTFOLIO' isDark={false} />
         </div>
 
         <LoadMorePortfolio
@@ -101,16 +107,33 @@ const Portfolio = ({
           categories={categories}
         />
       </div>
-      {isModalOpen ? (
-        <div className='fixed w-full h-full bg-[#0000001A]/[0.5] top-0 left-0 flex justify-center items-center'>
-          <div className='relative w-[1060px]'>
-            <PortfolioCardDetail
-              closeModal={closeModal}
-              activePost={activePost}
-            />
-          </div>
-        </div>
-      ) : null}
+      <div>
+        <ReactModal
+          isOpen={isModalOpen}
+          style={{
+            overlay: { backgroundColor: 'rgba(0,0,1,0.5)' },
+            content: {
+              // boxSizing: 'content-box',
+              padding: `${windowWidth > 640 ? '56px 80px' : '20px'}`,
+              width: `${windowWidth > 640 ? '100%' : '100vw'}`,
+              maxWidth: '1060px',
+              height: `${windowWidth > 640 ? '535px' : 'calc(100vh - 60px)'}`,
+              inset: 0,
+              zIndex: 999,
+              borderRadius: 'none',
+              marginTop: `${windowWidth > 640 ? 'none' : '60px'}`,
+              overflow: 'none',
+              border: 'none',
+              margin: `${windowWidth > 640 ? 'auto' : 'none'}`,
+            },
+          }}
+        >
+          <PortfolioCardDetail
+            closeModal={closeModal}
+            activePost={activePost}
+          />
+        </ReactModal>
+      </div>
     </div>
   );
 };

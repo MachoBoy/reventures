@@ -9,7 +9,7 @@ interface Props {
 
 const TipsApplyHow = ({ icon, title, desc, href }: Props) => {
   return (
-    <div className='flex flex-row items-center last:mt-14'>
+    <div className='flex flex-row items-center last:mt-14 sm:flex-col sm:items-start sm:last:mt-8'>
       <a
         target='_blank'
         rel='noreferrer'
@@ -21,7 +21,7 @@ const TipsApplyHow = ({ icon, title, desc, href }: Props) => {
         </div>
         {title}
       </a>
-      <div className='ml-7 text-[22px] text-[#3D3D3D] max-w-[542px] whitespace-pre-wrap indent-1'>
+      <div className='ml-7 text-[22px] text-[#3D3D3D] max-w-[542px] whitespace-pre-wrap indent-1 sm:ml-0 sm:text-sm sm:mt-3'>
         {desc}
       </div>
     </div>

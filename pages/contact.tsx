@@ -81,6 +81,7 @@ const Contact = ({ categories }: any) => {
     console.log(response);
 
     if (response.data === null) {
+      setUploadLoading(false);
       return alert('오류');
     }
 
@@ -178,12 +179,16 @@ const Contact = ({ categories }: any) => {
           content='initial-scale=1.0, width=device-width maximum-scale=1.0, shrink-to-fit=no, user-scalable=0'
         />
       </Head>
-      <div className='w-full h-[390px] bg-contact-top flex flex-col justify-center items-center'>
-        <div className='text-white text-7xl font-semibold'>Contact</div>
-        <div className='mt-4 text-white text-4xl'>Apply</div>
+      <div className='w-full h-[390px] bg-contact-top flex flex-col justify-center items-center sm:h-[330px] sm:items-start'>
+        <div className='w-full text-center text-white text-7xl font-semibold lg:text-6xl md:text-center sm:text-[46px]'>
+          Contact
+        </div>
+        <div className='w-full mt-4 text-center text-white text-4xl lg:text-3xl md:text-center sm:text-[26px]'>
+          Apply
+        </div>
       </div>
-      <div className='w-full max-w-[1142px] mx-auto pt-14 pb-24'>
-        <div className='text-center font-medium text-[32px]'>
+      <div className='w-full max-w-[1190px] mx-auto pt-14 pb-24 px-6 sm:pb-[75px]'>
+        <div className='w-full text-[#3D3D3D] text-center font-medium text-[32px] mx-auto md:text-2xl sm:text-lg sm:max-w-[280px]'>
           리벤처스와 함께 새로운 룰을 만들어갈 스타트업을 찾습니다!
         </div>
         <div className='mt-9'></div>
@@ -194,43 +199,49 @@ const Contact = ({ categories }: any) => {
               subtitle='기본 정보를 입력해주세요'
             />
             <div className='mt-8 w-full'>
-              <div className='flex justify-between'>
-                <ContactFormInput
-                  label='이름'
-                  placeholder='대표자 성함을 입력해주세요'
-                  isShort={true}
-                  type='text'
-                  name='name'
-                  error={methods.formState.errors.name}
-                />
-
-                <ContactFormInput
-                  label='기업명'
-                  placeholder='기업명을 입력해주세요'
-                  isShort={false}
-                  type='text'
-                  name='companyName'
-                  error={methods.formState.errors.companyName}
-                />
+              <div className='w-full flex justify-between flex-row md:flex-col'>
+                <div className='w-full max-w-[398px] md:max-w-full'>
+                  <ContactFormInput
+                    label='이름'
+                    placeholder='대표자 성함을 입력해주세요'
+                    isShort={true}
+                    type='text'
+                    name='name'
+                    error={methods.formState.errors.name}
+                  />
+                </div>
+                <div className='w-full max-w-[708px] md:max-w-full ml-2 md:ml-0'>
+                  <ContactFormInput
+                    label='기업명'
+                    placeholder='기업명을 입력해주세요'
+                    isShort={false}
+                    type='text'
+                    name='companyName'
+                    error={methods.formState.errors.companyName}
+                  />
+                </div>
               </div>
-              <div className='flex justify-between mt-8'>
-                <ContactFormInput
-                  label='전화번호'
-                  placeholder='대표자 전화를 입력해주세요'
-                  isShort={true}
-                  type='text'
-                  name='phoneNumber'
-                  error={methods.formState.errors.phoneNumber}
-                />
-
-                <ContactFormInput
-                  label='이메일'
-                  placeholder='대표자 이메일을 입력해주세요'
-                  isShort={false}
-                  type='email'
-                  name='email'
-                  error={methods.formState.errors.email}
-                />
+              <div className='flex justify-between mt-8 flex-row md:flex-col md:flex-co md:mt-0'>
+                <div className='w-full max-w-[398px] md:max-w-full'>
+                  <ContactFormInput
+                    label='전화번호'
+                    placeholder='대표자 전화를 입력해주세요'
+                    isShort={true}
+                    type='text'
+                    name='phoneNumber'
+                    error={methods.formState.errors.phoneNumber}
+                  />
+                </div>
+                <div className='w-full max-w-[708px] md:max-w-full ml-2 md:ml-0'>
+                  <ContactFormInput
+                    label='이메일'
+                    placeholder='대표자 이메일을 입력해주세요'
+                    isShort={false}
+                    type='email'
+                    name='email'
+                    error={methods.formState.errors.email}
+                  />
+                </div>
               </div>
             </div>
             <div className='mt-11'>
@@ -275,7 +286,7 @@ const Contact = ({ categories }: any) => {
                 subtitle='자유양식으로 30MB 미만의 파일을 첨부해주세요.'
               />
             </div>
-            <div className='w-full mt-10 flex flex-row'>
+            <div className='w-full mt-10 flex flex-row sm:flex-col'>
               <input
                 type='file'
                 className='w-full max-w-[602px] px-4 py-3 border-[1px] border-[#0000001A]'
@@ -287,10 +298,10 @@ const Contact = ({ categories }: any) => {
                   type='submit'
                   onClick={handleInput}
                   value='파일업로드'
-                  className='ml-3 inline-block h-[56px] px-7 py-3 text-white cursor-pointer bg-black hover:bg-[#6D7278] transition-colors'
+                  className='ml-3 inline-block h-[56px] px-7 py-3 text-white cursor-pointer bg-black hover:bg-[#6D7278] transition-colors sm:ml-0 sm:mt-4'
                 />
               ) : (
-                <div className='ml-9 w-[125px] h-[56px] px-7 py-3 bg-[#000000] text-white flex justify-center items-center'>
+                <div className='ml-9 w-[125px] h-[56px] px-7 py-3 bg-[#000000] text-white flex justify-center items-center sm:w-full sm:ml-0 sm:mt-4'>
                   <div>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -338,11 +349,11 @@ const Contact = ({ categories }: any) => {
             {!sendEmailLoading ? (
               <input
                 type='submit'
-                className='mx-auto mt-16 w-[362px] h-[77px] flex justify-center items-center text-white text-2xl cursor-pointer bg-black hover:bg-[#6D7278] transition-colors'
+                className='mx-auto mt-16 w-[362px] h-[77px] flex justify-center items-center text-white text-2xl cursor-pointer bg-black hover:bg-[#6D7278] transition-colors sm:w-full'
                 value='제출하기'
               />
             ) : (
-              <div className='mx-auto mt-16 w-[362px] h-[77px] flex justify-center items-center bg-black'>
+              <div className='mx-auto mt-16 w-[362px] h-[77px] flex justify-center items-center bg-black sm:w-full sm:mt-16'>
                 <div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
