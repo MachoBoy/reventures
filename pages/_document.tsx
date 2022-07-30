@@ -55,7 +55,7 @@ export default function Document() {
         />
       </Head>
       <body>
-        <div className='video-wrapper fixed w-full h-screen z-[100] bg-black sm:hidden'>
+        {/* <div className='video-wrapper fixed w-full h-screen z-[100] bg-black sm:hidden'>
           <video
             id='globalvideo'
             autoPlay
@@ -64,7 +64,7 @@ export default function Document() {
           >
             <source src='intro.mp4' type='video/mp4' />
           </video>
-        </div>
+        </div> */}
         <Main />
         <NextScript />
       </body>

@@ -18,20 +18,20 @@ export const aboutData = [
 
 export const investCountData = [
   {
-    number: '42,200,000,000',
+    number: 42200000000,
     title: 'AUM',
   },
   {
-    number: '91',
+    number: 91,
     title: 'FUNDS',
     subtitle: ['Blind 3', 'Project 88'],
   },
   {
-    number: '64',
+    number: 64,
     title: 'COMPANY',
   },
   {
-    number: '32',
+    number: 32,
     title: 'EXIT',
     subtitle: ['IPO', 'KOSDAQ 6', 'KONEX 4'],
   },

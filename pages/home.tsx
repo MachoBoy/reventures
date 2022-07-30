@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import MainSectionTitle from '../components/main-section-title/mainSectionTitle';
 import MainAboutItem from '../components/main-about-item/mainAboutItem';
 import PortfolioCard from '../components/portfolio-card/portfolioCard';
@@ -10,10 +11,31 @@ import PortfolioSlider from '../components/portfolio-slider/portfolioSlider';
 import { aboutData, investCountData } from '../data/home-data';
 import { PortfolioProps } from '../data/portfolio-data';
 import PortfolioNotFound from '../components/portfolio-not-found/portfolio-not-found';
+import FadeIn from '../components/fade-in/fadeIn';
 
 const Home = ({ portfolioPosts }: PortfolioProps) => {
-  console.log(portfolioPosts);
+  // console.log(portfolioPosts);
   //pt-[320px] pl-[358px]
+  const portfolioVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        // delay: 0.2,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+  const cardVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
   return (
     <div className='w-full'>
       <div className='relative top-section h-[867px] bg-black mx-auto lg:flex lg:flex-col lg:justify-center lg:items-center'>
@@ -80,16 +102,25 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           </div>
         </div>
       </div>
-      <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat px-6 sm:pt-[50px] sm:pb-[55px]'>
-        <div className='text-white text-[80px] font-semibold lg:text-6xl md:text-5xl sm:text-[40px]'>
-          RE:VENTURES
+      <FadeIn>
+        <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat px-6 sm:pt-[50px] sm:pb-[55px]'>
+          <div className='text-white text-[80px] font-semibold lg:text-6xl md:text-5xl sm:text-[40px]'>
+            RE:VENTURES
+          </div>
+          <p className='text-center text-[#FEFEFE] text-3xl w-full max-w-2xl whitespace-pre-wrap lg:text-2xl lg:mt-3 md:text-xl sm:mt-11'>
+            리벤처스는 혁신적 창업가와 투자자가 함께 {'\u000A'} 10년의 미래의
+            변화에 도전하는 엑셀러레이터 입니다.
+          </p>
         </div>
-        <p className='text-center text-[#FEFEFE] text-3xl w-full max-w-2xl whitespace-pre-wrap lg:text-2xl lg:mt-3 md:text-xl sm:mt-11'>
-          리벤처스는 혁신적 창업가와 투자자가 함께 {'\u000A'} 10년의 미래의
-          변화에 도전하는 엑셀러레이터 입니다.
-        </p>
-      </div>
-      <div className='fourth-section w-full pt-16 pb-28'>
+      </FadeIn>
+
+      <motion.div
+        className='fourth-section w-full pt-16 pb-28'
+        variants={portfolioVariant}
+        viewport={{ once: true }}
+        initial='hidden'
+        whileInView='visible'
+      >
         <div className='w-full max-w-[1240px] m-auto px-5 sm:px-1'>
           <MainSectionTitle title='portfolio' isDark={false} />
           <div className='mt-9 sm:mt-0'>
@@ -101,15 +132,16 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
                     index
                   ) => {
                     return (
-                      <PortfolioCard
-                        key={index}
-                        stage={stage}
-                        logo={logo}
-                        companyName={companyName}
-                        sector={sector}
-                        companyDesc={companyDesc}
-                        openModal={() => {}}
-                      />
+                      <motion.div key={index} variants={cardVariant}>
+                        <PortfolioCard
+                          stage={stage}
+                          logo={logo}
+                          companyName={companyName}
+                          sector={sector}
+                          companyDesc={companyDesc}
+                          openModal={() => {}}
+                        />
+                      </motion.div>
                     );
                   }
                 )}
@@ -121,7 +153,8 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
+
       <div className='fifth-section w-full pt-10 pb-14 bg-home-fifth bg-center bg-cover bg-no-repeat px-6'>
         <div className='w-full inline-block'>
           <div className='w-full max-w-[1143px] m-auto'>
@@ -141,64 +174,68 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
           </div>
         </div>
       </div>
-      <div className='sixth-section w-full pt-[60px] pb-[81px] bg-[#1A1A1A] px-6'>
-        <div className='w-full max-w-[1143px] m-auto flex flex-col'>
-          <MainSectionTitle title='contact us' isDark={true} />
-          <div className='mt-12 flex flex-col sm:mt-4'>
-            <div className='mt-5 flex flex-row gap-7 sm:flex-col sm:mt-5'>
-              <div className='w-full'>
-                <div className='text-gray-eee text-xl font-semibold sm:text-base text-left sm:text-center'>
-                  서울 강남구 역삼로 165 해성빌딩 팁스타운S1 5층 D호실
+      <FadeIn>
+        <div className='sixth-section w-full pt-[60px] pb-[81px] bg-[#1A1A1A] px-6'>
+          <div className='w-full max-w-[1143px] m-auto flex flex-col'>
+            <MainSectionTitle title='contact us' isDark={true} />
+            <div className='mt-12 flex flex-col sm:mt-4'>
+              <div className='mt-5 flex flex-row gap-7 sm:flex-col sm:mt-5'>
+                <div className='w-full'>
+                  <div className='text-gray-eee text-xl font-semibold sm:text-base text-left sm:text-center'>
+                    서울 강남구 역삼로 165 해성빌딩 팁스타운S1 5층 D호실
+                  </div>
+                  <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base text-left sm:text-center'>
+                    Unit D, Tipstown S1 5F, 165 Yeoksam-ro, Gangnam-gu, Seoul
+                    Republic of Korea
+                  </div>
+                  <Image
+                    width='558'
+                    height='522'
+                    alt='google-map'
+                    src='/img_map2.png'
+                  />
                 </div>
-                <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base text-left sm:text-center'>
-                  Unit D, Tipstown S1 5F, 165 Yeoksam-ro, Gangnam-gu, Seoul
-                  Republic of Korea
+                <div className='w-full'>
+                  <div className='text-gray-eee text-xl font-semibold sm:text-base'>
+                    대전 유성구 대학로 99 충남대학교, 대전 팁스타운 506호
+                  </div>
+                  <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base'>
+                    Unit 506, Chung-nam Univ, Tipstown 99, Daehak-ro,
+                    Yuseong-gu, Daejeon Republic of Korea
+                  </div>
+                  <Image
+                    width='558'
+                    height='522'
+                    alt='google-map'
+                    src='/img_map1.png'
+                  />
                 </div>
-                <Image
-                  width='558'
-                  height='522'
-                  alt='google-map'
-                  src='/img_map2.png'
-                />
-              </div>
-              <div className='w-full'>
-                <div className='text-gray-eee text-xl font-semibold sm:text-base'>
-                  대전 유성구 대학로 99 충남대학교, 대전 팁스타운 506호
-                </div>
-                <div className='mt-2 text-gray-eee text-lg mb-5 sm:text-base'>
-                  Unit 506, Chung-nam Univ, Tipstown 99, Daehak-ro, Yuseong-gu,
-                  Daejeon Republic of Korea
-                </div>
-                <Image
-                  width='558'
-                  height='522'
-                  alt='google-map'
-                  src='/img_map1.png'
-                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className='seventh-section pt-[121px] pb-[92px] bg-slate-500 text-center bg-home-seventh bg-center bg-no-repeat px-6 sm:py-11'>
-        <div className='text-white text-3xl font-semibold sm:text-2xl'>
-          IR, 창업, 제휴 및 협업 문의
+      </FadeIn>
+      <FadeIn>
+        <div className='seventh-section pt-[121px] pb-[92px] bg-slate-500 text-center bg-home-seventh bg-center bg-no-repeat px-6 sm:py-11'>
+          <div className='text-white text-3xl font-semibold sm:text-2xl'>
+            IR, 창업, 제휴 및 협업 문의
+          </div>
+          <div className='mt-5 text-gray-eee text-xl sm:text-base'>
+            리벤처스와 함께 성장하고 싶으신가요?
+          </div>
+          <div className='text-gray-eee text-xl sm:text-base'>
+            혹은 리벤처스에 의뢰할 프로젝트가 있으신가요?
+          </div>
+          <div className='text-gray-eee text-xl sm:text-base'>
+            리벤처스는 항상 열려 있습니다.
+          </div>
+          <Link href='/contact'>
+            <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl text-black font-semibold border-2 border-white border-solid hover:bg-black hover:text-white transition-all sm:py-4 sm:px-0 sm:w-full'>
+              지원하기
+            </a>
+          </Link>
         </div>
-        <div className='mt-5 text-gray-eee text-xl sm:text-base'>
-          리벤처스와 함께 성장하고 싶으신가요?
-        </div>
-        <div className='text-gray-eee text-xl sm:text-base'>
-          혹은 리벤처스에 의뢰할 프로젝트가 있으신가요?
-        </div>
-        <div className='text-gray-eee text-xl sm:text-base'>
-          리벤처스는 항상 열려 있습니다.
-        </div>
-        <Link href='/contact'>
-          <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl text-black font-semibold border-2 border-white border-solid hover:bg-black hover:text-white transition-all sm:py-4 sm:px-0 sm:w-full'>
-            지원하기
-          </a>
-        </Link>
-      </div>
+      </FadeIn>
     </div>
   );
 };
