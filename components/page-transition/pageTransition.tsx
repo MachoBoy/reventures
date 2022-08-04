@@ -27,7 +27,7 @@ const PageTransition = ({ children }: Props) => {
   const { asPath } = useRouter();
   return (
     <div className='overflow-hidden'>
-      <AnimatePresence initial={false} exitBeforeEnter>
+      <AnimatePresence initial={true} exitBeforeEnter>
         <motion.div
           key={asPath}
           variants={variants}
