@@ -46,7 +46,7 @@ const Header = ({ mobileNavOpen, openMobileNav, closeMobileNav }: Props) => {
             </a>
           </Link>
         </div>
-        <nav className='menu-container flex w-full max-w-[600px] lg:hidden'>
+        <nav className='menu-container flex w-full max-w-[470px] lg:hidden'>
           <ul className='menu w-full flex justify-between items-center'>
             {navData.map(({ title, link, children }, index) => {
               return (

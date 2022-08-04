@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/client/react';
 import { client } from '../lib/apollo';
 import ReactModal from 'react-modal';
 import Layout from '../components/layout/layout';
+import PageTransition from '../components/page-transition/pageTransition';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -30,7 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <ApolloProvider client={client}>
-        <Component {...pageProps} />
+        <PageTransition>
+          <Component {...pageProps} />
+        </PageTransition>
       </ApolloProvider>
     </Layout>
   );
