@@ -20,7 +20,7 @@ const Footer = () => {
         <div className='w-full h-[1px] bg-[#4B4B4B]'></div>
         <div className='mt-10 w-full max-w-[1093px] mx-auto grid grid-cols-3 px-6 sm:grid-cols-1'>
           {footerData.map(
-            ({ title, desc1, desc2, desc3, desc4, desc5 }, index) => {
+            ({ title, desc1, desc2, desc3, desc4, desc5, desc6 }, index) => {
               return (
                 <FooterInfo
                   key={index}
@@ -30,6 +30,7 @@ const Footer = () => {
                   desc3={desc3}
                   desc4={desc4}
                   desc5={desc5}
+                  desc6={desc6}
                 />
               );
             }

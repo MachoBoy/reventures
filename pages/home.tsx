@@ -72,9 +72,9 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         <div className='about-left relative w-full max-w-[710px] mb-10'>
           <div className='block w-full h-full shadow-2xl p-14 z-20 bg-white -mt-11 lg:-mt-44 md:relative'>
             <MainSectionTitle title='About' isDark={false} />
-            <p className='text-2xl text-[#3D3D3D] mt-9 text-left lg:text-center sm:mt-5 sm:text-xl'>
+            {/* <p className='text-2xl text-[#3D3D3D] mt-9 text-left lg:text-center sm:mt-5 sm:text-xl'>
               벤처투자를 위한 투자자와 스타트업의 파트너, 리벤처스
-            </p>
+            </p> */}
             <div className='mt-9'>
               {aboutData.map(({ icon, title, desc }, index) => {
                 return (
@@ -103,14 +103,14 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         </div>
       </div>
       <FadeIn>
-        <div className='third-section pt-[75px] pb-[95px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat px-6 sm:pt-[50px] sm:pb-[55px]'>
-          <div className='text-white text-[80px] font-semibold lg:text-6xl md:text-5xl sm:text-[40px]'>
+        <div className='third-section pt-[75px] pb-[95px] h-[362px] bg-slate-500 flex flex-col items-center bg-home-third bg-center bg-no-repeat px-6 sm:pt-[50px] sm:pb-[55px]'>
+          {/* <div className='text-white text-[80px] font-semibold lg:text-6xl md:text-5xl sm:text-[40px]'>
             RE:VENTURES
           </div>
           <p className='text-center text-[#FEFEFE] text-3xl w-full max-w-2xl whitespace-pre-wrap lg:text-2xl lg:mt-3 md:text-xl sm:mt-11'>
             리벤처스는 혁신적 창업가와 투자자가 함께 {'\u000A'} 10년의 미래의
             변화에 도전하는 엑셀러레이터 입니다.
-          </p>
+          </p> */}
         </div>
       </FadeIn>
 

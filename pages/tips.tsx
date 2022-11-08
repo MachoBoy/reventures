@@ -32,9 +32,9 @@ const Tips = () => {
         <div className='w-full text-white text-7xl font-semibold lg:text-6xl text-center sm:text-[46px]'>
           TIPS
         </div>
-        <div className='mt-4 text-white text-4xl lg:text-3xl text-center sm:text-[26px] sm:mt-[26px]'>
+        {/* <div className='mt-4 text-white text-4xl lg:text-3xl text-center sm:text-[26px] sm:mt-[26px]'>
           기술력을 갖춘 유망한 창업팀에게 과감한 창업 도전 기회를 제공
-        </div>
+        </div> */}
       </div>
       <div className='w-full max-w-[1140px] pt-20 mx-auto px-6 sm:pt-12'>
         {/* image zoom modal */}
