@@ -74,7 +74,7 @@ const Tips = () => {
 
               <p className='mt-9 sm:mt-6 text-base sm:text-sm'>
                 <span className='font-semibold'>지원조건 :&nbsp;</span>
-                창업팀당 최대 10억언 내외(최장 3년 이내)
+                창업팀당 최대 10억원 내외(최장 3년 이내)
               </p>
               <p className='mt-2 ml-[72px] -indent-[72px] text-base sm:text-sm sm:indent-0 sm:ml-0'>
                 <span className='font-semibold'>지원내용 :&nbsp;</span>
