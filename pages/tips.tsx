@@ -63,20 +63,11 @@ const Tips = () => {
               />
             </div>
             <div className='flex flex-col max-w-[700px] lg:mt-5'>
-              <div className='text-[28px] text-[#3D3D3D] font-semibold text-center lg:text-2xl sm:text-[18px]'>
-                TIPS 프로그램은 중소벤처기업부가 만든 민간투자 주도형 초기
-                기술창업기업 지원 프로그램입니다.
-              </div>
-              <div className='mt-9 text-[28px] text-[#3D3D3D] font-semibold text-center lg:text-2xl sm:text-[18px] sm:mt-5'>
-                리벤처스는 투자와 함께 R&D/사업화/글로벌 진출 지원을 통해 미래를
-                선도할 창업기업을 집중 육성합니다.
-              </div>
-
-              <p className='mt-9 sm:mt-6 text-base sm:text-sm'>
+              <p className='mt-9 text-xl text-[#3D3D3D] font-normal sm:text-[18px] sm:mt-5 text-left'>
                 <span className='font-semibold'>지원조건 :&nbsp;</span>
                 창업팀당 최대 10억원 내외(최장 3년 이내)
               </p>
-              <p className='mt-2 ml-[72px] -indent-[72px] text-base sm:text-sm sm:indent-0 sm:ml-0'>
+              <p className='ml-[85px] -indent-[85px] mt-2 text-xl text-[#3D3D3D] font-normal text-left sm:text-[18px] sm:mt-5'>
                 <span className='font-semibold'>지원내용 :&nbsp;</span>
                 엔젤투자(1억원) + 성공벤처인의 보육·맨토링 + R&D(5억) + 추가지원
                 4억 <br />
@@ -84,7 +75,7 @@ const Tips = () => {
               </p>
             </div>
           </div>
-          <div className='relativ w-full max-w-[1146px] mt-10 sm:mt-6'>
+          <div className='relative w-full max-w-[1146px] mt-10 sm:mt-6'>
             <Image
               layout='responsive'
               width={1146}

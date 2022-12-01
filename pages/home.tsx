@@ -53,14 +53,14 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
         <div className='absolute right-7 top-1/3 -mt-6 block lg:hidden'>
           <ScrollIndicator />
         </div>
-        <div className='absolute h-[220px] top-1/2 left-1/2 -translate-y-1/2 -translate-x-[29.5rem] px-6 lg:relative lg:w-full lg:text-center lg:translate-x-0 lg:left-0 lg:top-0 lg:-translate-y-[1/6] lg:h-auto'>
+        <div className='absolute h-[220px] flex justify-center flex-col top-1/2 left-1/2 -translate-y-1/2 -translate-x-[37rem] px-6 xl:-translate-x-1/2 lg:relative lg:w-full lg:text-center lg:translate-x-0 lg:left-0 lg:top-0 lg:-translate-y-[1/6] lg:h-auto'>
           <div className='flex flex-row items-center'>
             <div className='w-[5px] h-[93px] bg-[#64676A] block lg:hidden'></div>
-            <div className='ml-5 text-white text-[120px] font-semibold lg:ml-0 lg:text-8xl lg:w-full lg:text-center sm:text-5xl'>
+            <div className='ml-5 text-white text-7xl font-semibold lg:ml-0 lg:w-full lg:text-center sm:text-5xl'>
               RE:VENTURES
             </div>
           </div>
-          <div className='block ml-8 text-4xl text-[#A2A4A7] text-left lg:ml-0 lg:text-center lg:mt-5 lg:text-3xl lg:uppercase sm:text-2xl'>
+          <div className='block ml-8 text-3xl text-[#A2A4A7] text-left lg:ml-0 lg:text-center lg:mt-5 lg:uppercase'>
             Venture for the early starts-up
           </div>
         </div>
@@ -218,16 +218,10 @@ const Home = ({ portfolioPosts }: PortfolioProps) => {
       <FadeIn>
         <div className='seventh-section pt-[121px] pb-[92px] bg-slate-500 text-center bg-home-seventh bg-center bg-no-repeat px-6 sm:py-11'>
           <div className='text-white text-3xl font-semibold sm:text-2xl'>
-            IR, 창업, 제휴 및 협업 문의
+            Contact Us
           </div>
           <div className='mt-5 text-gray-eee text-xl sm:text-base'>
-            리벤처스와 함께 성장하고 싶으신가요?
-          </div>
-          <div className='text-gray-eee text-xl sm:text-base'>
-            혹은 리벤처스에 의뢰할 프로젝트가 있으신가요?
-          </div>
-          <div className='text-gray-eee text-xl sm:text-base'>
-            리벤처스는 항상 열려 있습니다.
+            IR, 창업, 제휴 및 협업 문의
           </div>
           <Link href='/contact'>
             <a className='mt-7 inline-block py-5 px-36 bg-white text-2xl text-black font-semibold border-2 border-white border-solid hover:bg-black hover:text-white transition-all sm:py-4 sm:px-0 sm:w-full'>
