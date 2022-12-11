@@ -25,8 +25,8 @@ const MainInvestCount = ({ number, title, subtitle }: Props) => {
         duration: 1.5,
         onUpdate: (value) => {
           if (node) {
-            node.textContent = value.toFixed(0);
-            // node.textContent = commaSeparateNumber(value.toFixed(0));
+            // node.textContent = value.toFixed(0);
+            node.textContent = commaSeparateNumber(value.toFixed(0));
           }
         },
         onComplete: () => {
@@ -37,12 +37,12 @@ const MainInvestCount = ({ number, title, subtitle }: Props) => {
     }
   }, [isInView, number, count, setCount]);
 
-  // const commaSeparateNumber = (val: any) => {
-  //   while (/(\d+)(\d{3})/.test(val.toString())) {
-  //     val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-  //   }
-  //   return val;
-  // };
+  const commaSeparateNumber = (val: any) => {
+    while (/(\d+)(\d{3})/.test(val.toString())) {
+      val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+    }
+    return val;
+  };
 
   return (
     <div
