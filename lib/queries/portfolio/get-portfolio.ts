@@ -10,7 +10,7 @@ export const GET_PORTFOLIO_POSTS = gql`
   ) {
     posts(
       where: {
-        orderby: { field: DATE, order: ASC }
+        orderby: { field: DATE, order: DESC }
         search: $search
         categoryId: $categoryId
       }
